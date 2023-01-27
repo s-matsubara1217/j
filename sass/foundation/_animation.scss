@@ -514,6 +514,15 @@
   .mainVisual {
     &__hero {
       opacity: 1;
+
+      .swiper-slide {
+        &[class*=-active] {
+          img {
+            transition-delay: 0s;
+            transform: scale(1);
+          }
+        }
+      }
     }
     &__copy {
       opacity: 1;

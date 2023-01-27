@@ -1,7 +1,8 @@
 /*-------------------------------
   メインビジュアル swiper
 -------------------------------*/
-$(function () {
+
+$(window).on('load', function() {
   let swipeOption = {};
   if ( $(".mainVisual__hero .swiper-slide").length > 1 ) {
     // スライドが2枚以上
@@ -14,7 +15,7 @@ $(function () {
       loopAdditionalSlides: 1,
       speed: 2000,
       autoplay: {
-        delay: 7000,
+        delay: 8000,
         disableOnInteraction: false,
         waitForTransition: false,
       },

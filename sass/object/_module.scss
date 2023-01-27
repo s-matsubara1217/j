@@ -102,15 +102,17 @@
 			}
 		}
 
-		&::first-letter {
-			color: $primary-color;
-		}
-
 		&.anime {
 			&.js-active {
 				&:before {
 					width: 100%;
 				}
+			}
+		}
+
+		span {
+			&:first-child {
+				color: $primary-color;
 			}
 		}
 	}
@@ -126,8 +128,10 @@
 			&:before {
 				background-color: $txt-color;
 			}
-			&::first-letter {
-				color: #fff;
+			span {
+				&:first-child {
+					color: #fff;
+				}
 			}
 		}
 		.ja {

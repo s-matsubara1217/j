@@ -126,16 +126,16 @@
             min-height: 240px;
             object-position: 30%;
           }
-          transition: 7s 1s ease-out;
+          transition: 10s 1s ease-out;
           transform: scale(1.05);
         }
         /* スライド アクティブ時 */
-        &[class*=-active] {
-          img {
-            transition-delay: 0s;
-            transform: scale(1);
-          }
-        }
+        // &[class*=-active] {
+        //   img {
+        //     transition-delay: 0s;
+        //     transform: scale(1);
+        //   }
+        // }
       }
     }
     &__copy {
@@ -930,8 +930,10 @@
       top: -80px;
       left: 0;
       @include mq(sp) {
+        transform: scale(0.4);
         transform-origin: top left;
-        top: -56px;
+        top: -32px;
+        left: -16px;
       }
     }
     &02 {
