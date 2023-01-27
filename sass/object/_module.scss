@@ -75,6 +75,13 @@
 		line-height: 1;
 		position: relative;
 		z-index: 1;
+		@media all and (-ms-high-contrast: none) {
+			span {
+				position: relative;
+				z-index: 10;
+			}
+		}
+
 		@include mq(sp) {
 			font-size: 3.4rem;
 		}

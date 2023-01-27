@@ -48,6 +48,9 @@
       margin-top: 60px;
       max-width: calc(100% - 100px);
       position: relative;
+      @media all and (-ms-high-contrast: none) {
+        width: calc(100% - 100px);
+      }
       @include mq(sp) {
         max-width: 92%;
         margin: 0 auto;
