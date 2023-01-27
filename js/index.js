@@ -1,35 +1,47 @@
 /*-------------------------------
   メインビジュアル swiper
 -------------------------------*/
-const mainVisual__Swiper = new Swiper('.mainVisual__hero .swiper', {
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true,
-  },
-  loop: true,
-  loopAdditionalSlides: 1,
-  speed: 2000,
-  // autoplay: {
-  //   delay: 7000,
-  //   disableOnInteraction: false,
-  //   waitForTransition: false,
-  // },
-  followFinger: false,
+$(function () {
+  let swipeOption = {};
+  if ( $(".mainVisual__hero .swiper-slide").length > 1 ) {
+    // スライドが2枚以上
+    swipeOption = {
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
+      loop: true,
+      loopAdditionalSlides: 1,
+      speed: 2000,
+      autoplay: {
+        delay: 7000,
+        disableOnInteraction: false,
+        waitForTransition: false,
+      },
+      followFinger: false,
+      allowTouchMove: false,
+    }
+  } else {
+    // スライドが1枚
+    swipeOption = {
+      loop: false,
+      autoplay: false,
+    }
+  }
+  const mainVisual__Swiper = new Swiper('.mainVisual__hero .swiper', swipeOption);
 });
-
 
 /*-------------------------------
   新着求人情報 swiper
 -------------------------------*/
 const newJobs__Swiper = new Swiper('.newJobs__swiper', {
-  // loop: true,
   spaceBetween: 28,
   speed: 500,
-  // autoplay: {
-  //   delay: 7000,
-  //   disableOnInteraction: false,
-  //   waitForTransition: false,
-  // },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+    waitForTransition: false,
+  },
   breakpoints: {
     835: {
       spaceBetween: 24,

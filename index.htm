@@ -153,6 +153,12 @@
 							<div class="swiper-slide">
 								<img src="img/index/hero01.jpg" alt="イメージ" class="ofi">
 							</div>
+							<div class="swiper-slide">
+								<img src="img/index/hero02.jpg" alt="イメージ" class="ofi">
+							</div>
+							<div class="swiper-slide">
+								<img src="img/index/hero03.jpg" alt="イメージ" class="ofi">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -620,11 +626,11 @@
 					const interview__Swiper = new Swiper('.interview__swiper', {
 						spaceBetween: 72,
 						speed: 500,
-						// autoplay: {
-						//   delay: 7000,
-						//   disableOnInteraction: false,
-						//   waitForTransition: false,
-						// },
+						autoplay: {
+						  delay: 5000,
+						  disableOnInteraction: false,
+						  waitForTransition: false,
+						},
 						breakpoints: {
 							835: {
 								spaceBetween: 40,
@@ -634,6 +640,16 @@
 							nextEl: '.interview__swiper-button-next',
 							prevEl: '.interview__swiper-button-prev',
 						},
+					});
+					interview__Swiper.autoplay.stop(); //画面に現れるまでswiperを停止
+					$(window).on('scroll', function () {
+						let position = $('.interview__swiper').offset().top - $(window).innerHeight() + 100,
+						scrollTop = $(window).scrollTop();
+						if(scrollTop > position) {
+							interview__Swiper.autoplay.start(); //画面に現れたらswiperを開始
+						} else{
+							interview__Swiper.autoplay.stop(); // 画面外にスクロールしたらswiperを停止
+						}
 					});
 
 					/*-------------------------------
