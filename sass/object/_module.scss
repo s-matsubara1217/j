@@ -419,6 +419,7 @@ body{
 		}
 		.txtArea {
 			margin-top: 32px;
+			color: $txt-color;
 			transition: opacity 0.3s;
 			@include mq(sp) {
 				margin-top: 24px;

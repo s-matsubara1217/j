@@ -191,6 +191,12 @@
         a {
           font-size: 1.6rem;
           font-weight: bold;
+          transition: opacity 0.3s;
+          @include mq(pc) {
+            &:hover {
+              opacity: 0.7;
+            }
+          }
           @include mq(sp) {
             font-size: 1.4rem;
           }
@@ -412,17 +418,19 @@
     right: 10px;
     bottom: 10px;
   }
-  @include mq(pc){
-    &:hover{
-      transform: translate(0,-5px);
-    }
-  }
+  
   .js-scroll &{
 		opacity: 1;
     transform: translate(0);
 	}
   a {
     display: block;
+    @include mq(pc){
+      transition: opacity 0.3s;
+      &:hover{
+        opacity: 0.7;
+      }
+    }
     @include mq(sp){
       img {
         height: 64px;

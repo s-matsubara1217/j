@@ -452,18 +452,34 @@
           position: relative;
           @include mq(sp) {
             margin-top: 0;
-            margin-right: 12px;
+            margin-right: 48px;
           }
 
           .illust {
+            &.-human {
+              img {
+                @include mq(sp) {
+                  height: 122px;
+                }
+              }
+            }
             &.-ballon {
               position: absolute;
               top: -16px;
               left: 130px;
               opacity: 0;
-              transform: scale(0.5);
-              transition: transform 0.4s, opacity 0.4s;
+              transform: scale(0.7);
+              transition: transform 0.5s, opacity 0.5s;
               transform-origin: left bottom;
+              @include mq(sp) {
+                left: 56px;
+              }
+
+              img {
+                @include mq(sp) {
+                  height: 75px;
+                }
+              }
 
               &.js-active {
                 opacity: 1;
@@ -677,11 +693,36 @@
             position: relative;
           }
 
+          &-wrapper {
+            height: 100%;
+          }
           &-slide {
+            height: auto;
             @include mq(pc) {
               @for $i from 1 through 10 {
                 &:nth-child(#{$i}) {
                   animation-delay: 0.15s * $i - 0.15s;
+                }
+              }
+            }
+
+            a {
+              // display: flex;
+              // flex-direction: column;
+              // justify-content: flex-start;
+              // height: 100%;
+              @include mq(pc) {
+                display: block;
+                height: 100%;
+                position: relative;
+                padding-bottom: 40px;
+              }
+
+              .info {
+                @include mq(pc) {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
                 }
               }
             }

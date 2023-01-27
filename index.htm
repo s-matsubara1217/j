@@ -396,87 +396,7 @@
 				</div>
 			</section>
 
-			<!-- スタッフインタビュー -->
-			<section class="sec__interview">
-				<div class="interview">
-					<div class="interview__inner innerWrap">
-						<div class="interview__head">
-							<div class="wrap">
-								<div class="commonHead01">
-									<span class="eng anime split -for-fadeIn">Interview</span>
-									<h2 class="ja anime split -for-fadeIn">スタッフインタビュー</h2>
-								</div>
-								<p class="lead">
-									ダミー）当社で働くスタッフにリアルなお話を伺いました。
-								</p>
-							</div>
-							<div class="commonBtn01">
-								<a href="interview_l.htm">
-									<span class="txt">一覧を見る</span>
-								</a>
-							</div>
-						</div>
-						<div class="interview__body">
-							<div class="swiper interview__swiper">
-								<div class="swiper-wrapper interview__swiper-wrapper">
-									<div class="swiper-slide interview__swiper-slide interviewCard anime -fadeIn">
-										<a href="#">
-											<div class="imgArea">
-												<span class="num">01</span>
-												<div class="img">
-													<img src="img/index/interview_img01.jpg" alt="イメージ" class="ofi" loading="lazy">
-												</div>
-											</div>
-											<div class="txtArea">
-												<p class="lead">
-													とにかく環境のいい職場を探していました
-												</p>
-												<span class="info">名前 太郎／2020年入社</span>
-											</div>
-										</a>
-									</div>
-									<div class="swiper-slide interview__swiper-slide interviewCard anime -fadeIn">
-										<a href="#">
-											<div class="imgArea">
-												<span class="num">02</span>
-												<div class="img">
-													<img src="img/index/interview_img02.jpg" alt="イメージ" class="ofi" loading="lazy">
-												</div>
-											</div>
-											<div class="txtArea">
-												<p class="lead">
-													就職にこだわりなんてありませんでした
-												</p>
-												<span class="info">名前 花子／2020年入社</span>
-											</div>
-										</a>
-									</div>
-									<div class="swiper-slide interview__swiper-slide interviewCard anime -fadeIn">
-										<a href="#">
-											<div class="imgArea">
-												<span class="num">03</span>
-												<div class="img">
-													<img src="img/index/interview_img03.jpg" alt="イメージ" class="ofi" loading="lazy">
-												</div>
-											</div>
-											<div class="txtArea">
-												<p class="lead">
-													転職のきっかけは仕事でカラダを痛めたこと
-												</p>
-												<span class="info">名前 太郎／2020年入社</span>
-											</div>
-										</a>
-									</div>
-								</div>
-								<div class="swiper-button interview__swiper-button">
-									<div class="swiper-button-prev interview__swiper-button-prev"></div>
-									<div class="swiper-button-next interview__swiper-button-next"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+			<!-- スタッフインタビュー Ajax -->
 
 			<!-- 一日の流れ -->
 			<section class="sec__oneday sec__common -rowReverse">
@@ -678,57 +598,88 @@
 	<script src="js/vendor/swiper.min.js"></script>
 	<script src="js/index.js"></script>
 
-	<!-- ajax -->
-	<!-- <script>
+	<!-- スタッフインタビュー Ajax -->
+	<script>
     jQuery(function () {
       jQuery.ajax({
         type: 'GET',
-        url: 'info_ajax.htm?time=' + new Date().getTime(),
+        url: 'interview_ajax.htm?time=' + new Date().getTime(),
         success: function (data) {
 
-          $target = $('.sec__intro');
-          $target.before(data);
+          $target = $('.sec__jobs');
+          $target.after(data);
           // js発火
           objectFitImages('img.ofi');
           scrollAnime();
           loadActive();
 					spanWrap('.split');
 
-					/*----------------------------------------
-						お知らせ swiper
-					----------------------------------------*/
-					const swiperElement = document.querySelectorAll(".info__swiper");
-					const swiperArray = Array.prototype.slice.call(swiperElement, 0);
-					const swiper = new Swiper( swiperArray , {
-						loop: true,
-						speed: 600,
-						autoplay: {
-							delay: 5000,
-							disableOnInteraction: false,
-						},
+					/*-------------------------------
+						インタビュー swiper
+					-------------------------------*/
+					const interview__Swiper = new Swiper('.interview__swiper', {
+						spaceBetween: 72,
+						speed: 500,
+						// autoplay: {
+						//   delay: 7000,
+						//   disableOnInteraction: false,
+						//   waitForTransition: false,
+						// },
 						breakpoints: {
 							835: {
+								spaceBetween: 40,
 							}
 						},
-
 						navigation: {
-							nextEl: '.info__swiper-button-next',
-							prevEl: '.info__swiper-button-prev',
+							nextEl: '.interview__swiper-button-next',
+							prevEl: '.interview__swiper-button-prev',
 						},
 					});
-					// hover
-					swiperArray.forEach(function (element) {
-						element.addEventListener('mouseover', function () {
-							swiper.autoplay.stop();
-						}, false);
-						element.addEventListener('mouseout', function () {
-							swiper.autoplay.start();
-						}, false);
-					});
+
+					/*-------------------------------
+						SPのみボタン順番入れ替え
+					-------------------------------*/
+					/*** 変数定義 ***/
+					/** メディアクエリ **/
+					var mediaQueryList01 = window.matchMedia("(max-width:834px)");
+					var mediaQueryList02 = window.matchMedia("(min-width:835px)");
+
+					/*** イベントリスナー ***/
+					var listener01 = function(event) {
+						// リサイズ時に行う処理
+						if (event.matches) {
+							// 835px未満
+							$('.interview__body').after($('.interview .commonBtn01'));
+						}
+					};
+					var listener02 = function(event) {
+						// リサイズ時に行う処理
+						if (event.matches) {
+							// 835px以上
+							$('.interview__head .wrap').after($('.interview .commonBtn01'));
+						}
+					};
+
+					/*** リスナー登録 ***/
+					if (mediaQueryList01.addEventListener) {
+						mediaQueryList01.addEventListener("change", listener01, false);
+					} else if (mediaQueryList01.attachEvent) {
+						mediaQueryList01.attachEvent("change", listener01);
+					}
+					if (mediaQueryList02.addEventListener) {
+						mediaQueryList02.addEventListener("change", listener02, false);
+					} else if (mediaQueryList02.attachEvent) {
+						mediaQueryList02.attachEvent("change", listener02);
+					}
+
+					/*** 初期化処理 ***/
+					listener01(mediaQueryList01);
+					listener02(mediaQueryList02);
+
         },
       });
     });
-  </script> -->
+  </script>
 
 </body>
 

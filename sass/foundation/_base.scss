@@ -98,11 +98,11 @@ body:not(.front-page) .main{
 a{
 	color: $link-color;
 	transition: opacity 0.24s,color 0.24s;
-	@include mq(pc) {
-		&:hover {
-			color: $primary-color;
-		}
-	}
+	// @include mq(pc) {
+	// 	&:hover {
+	// 		color: $primary-color;
+	// 	}
+	// }
 }
 
 /* classes */

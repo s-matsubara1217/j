@@ -44,31 +44,7 @@ const newJobs__Swiper = new Swiper('.newJobs__swiper', {
 
 
 /*-------------------------------
-  インタビュー swiper
--------------------------------*/
-const interview__Swiper = new Swiper('.interview__swiper', {
-  spaceBetween: 72,
-  speed: 500,
-  // autoplay: {
-  //   delay: 7000,
-  //   disableOnInteraction: false,
-  //   waitForTransition: false,
-  // },
-  breakpoints: {
-    835: {
-      spaceBetween: 40,
-    }
-  },
-
-  navigation: {
-    nextEl: '.interview__swiper-button-next',
-    prevEl: '.interview__swiper-button-prev',
-  },
-});
-
-
-/*-------------------------------
-  SPのみ画像順番入れ替え
+  SPのみ順番入れ替え
 -------------------------------*/
 /*** 変数定義 ***/
 /** メディアクエリ **/
@@ -90,7 +66,6 @@ var listener01 = function(event) {
 
       Destination.parentNode.insertBefore(Target, Destination.nextElementSibling);
     })
-    $('.interview .commonBtn01').before($('.interview__body'));
   }
 };
 var listener02 = function(event) {
@@ -104,8 +79,6 @@ var listener02 = function(event) {
 
       BenchMark.parentNode.insertBefore(Target, BenchMark.nextElementSibling);
     })
-    $('.interview .commonBtn01').before($('.interview__head .wrap'));
-
   }
 };
 
