@@ -1,6 +1,5 @@
 (function($) {
 
-
 	/*-------------------------------
 		objectFitImages
 	-------------------------------*/
@@ -10,7 +9,6 @@
 		iPhone/iPad class
 	-------------------------------*/
 	var ua = navigator.userAgent.toLowerCase();
-
 	if ( ua.indexOf('iPhone') > 0 ) {
 		$("body").addClass("iPhone");
 	}else if ( ua.indexOf('ipad') > -1 || ua.indexOf('macintosh') > -1 && 'ontouchend' in document ) {
@@ -23,7 +21,6 @@
 	setTimeout(function() {
 		$('body').addClass('js-ready');
 	}, 300);
-
 	$(window).on('load',function(){
 		$('body').addClass('js-loaded');
 	});
@@ -80,7 +77,6 @@
 
 })(jQuery);
 
-
 /*-------------------------------
 	IEでclosestを有効にする
 -------------------------------*/
@@ -88,7 +84,6 @@ if (!Element.prototype.matches) {
 	Element.prototype.matches = Element.prototype.msMatchesSelector ||
 		Element.prototype.webkitMatchesSelector;
 }
-
 if (!Element.prototype.closest) {
 	Element.prototype.closest = function(s) {
 		var el = this;
@@ -100,8 +95,6 @@ if (!Element.prototype.closest) {
 		return null;
 	};
 }
-
-
 
 /*-------------------------------
 	ハンバーガーメニュー
@@ -180,9 +173,8 @@ function loadActive() {
 }
 loadActive();
 
-
 /*-------------------------------
-		文字列を分割
+	文字列を分割
 -------------------------------*/
 function spanWrap(targetElm) {
 	const targets = [].slice.call(document.querySelectorAll(targetElm));
@@ -217,36 +209,3 @@ $('.split span').each(function () {
 		txt.replace(' ', '&nbsp;')
 	);
 });
-
-// 221221 matsubara index.jsから移動
-/*----------------------------------------
-	メイン動画
-----------------------------------------*/
-$(function () {
-  $('#movie').mb_YTPlayer({
-		stopMovieOnBlur: false,
-  });
-});
-
-// 221221 matsubara index.jsから移動
-/*----------------------------------------
-	メイン動画 スクロールしたらスタイル変更
-----------------------------------------*/
-var target = $('.mainMovie')
-var mv = $('.mainVisual')
-var mainVisualHeight = $('.mainVisual').innerHeight();
-
-$(function () {
-	if ($(mv).length) {
-		$(window).scroll(function() {
-			var scroll = $(this).scrollTop();
-			if (scroll >= mainVisualHeight) {
-				$(target).removeClass('-mv');
-			} else {
-				$(target).addClass('-mv');
-			}
-		});
-	} else {
-		$(target).removeClass('-mv')
-	}
-})

@@ -283,14 +283,12 @@ a{
 			padding: 5vw 7%;
 			display: flex;
 			overflow: auto;
-			border-radius: 100px 0 100px 0;
 			@include mq(sp) {
-				border-radius: 48px 0 48px 0;
 				padding: 8vw 7%;
 			}
 
 			&::-webkit-scrollbar {
-				width: 0px;
+				width: 2px;
 				height: 0;
 			}
 			&::-webkit-scrollbar-track {
@@ -314,13 +312,22 @@ a{
 			a {
 				justify-content: center !important;
 
-				.main {
-					display: flex;
-					img {
-						@include mq(sp) {
-							height: 14px !important;
-						}
+			}
+			&__main {
+				display: flex;
+				img {
+					@include mq(sp) {
+						height: 14px !important;
 					}
+				}
+			}
+			&__sub {
+				color: #555555;
+				@include mq(sp) {
+					font-size: 1rem;
+					display: block;
+					margin-top: 0;
+					margin-top: 2px;
 				}
 			}
 		}
