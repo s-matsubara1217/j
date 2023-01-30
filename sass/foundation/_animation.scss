@@ -105,7 +105,6 @@
     }
   }
 
-
   // @for
   &.-for-fadeIn {
     span {
@@ -412,86 +411,6 @@
   }
   100% {
     transform: scaleY(0);
-  }
-}
-
-// 固有アニメーション
-@include keyframes(waveY-20) {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-20px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  75% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@include keyframes(fadein-b-rotateX-reverse) {
-  0% {
-    opacity: 0;
-    transform: translateY(10%) rotateX(90deg) scale(-1,1);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) rotateX(0) scale(-1,1);
-  }
-}
-@include keyframes(imgZoomUp) {
-  0% {
-      transform: scale(1);
-  }
-  100% {
-      transform: scale(1.05);
-  }
-}
-// ふわふわ浮遊
-.js-loaded {
-  .anime-fuwafuwa {
-    animation: 3s fuwafuwa infinite 1s;
-    @include mq(sp) {
-      animation: 3s fuwafuwa-sp infinite 1s;
-    }
-    &.-delay01 {
-      animation: 3s fuwafuwa infinite 1.5s;
-      @include mq(sp) {
-        animation: 3s fuwafuwa-sp infinite 1.5s;
-      }
-    }
-    &.-delay02 {
-      animation: 3s fuwafuwa infinite 2s;
-      @include mq(sp) {
-        animation: 3s fuwafuwa-sp infinite 3s;
-      }
-    }
-    &.-delay03 {
-      animation: 3s fuwafuwa infinite 2.5s;
-      @include mq(sp) {
-        animation: 3s fuwafuwa-sp infinite 2.5s;
-      }
-    }
-  }
-}
-@keyframes fuwafuwa {
-  0%, 100% {
-  transform: translateY(0);
-  }
-  50% {
-  transform: translateY(-20px);
-  }
-}
-@keyframes fuwafuwa-sp {
-  0%, 100% {
-  transform: translateY(0);
-  }
-  50% {
-  transform: translateY(-10px);
   }
 }
 

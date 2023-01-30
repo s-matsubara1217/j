@@ -38,7 +38,6 @@
       .txt {
         font-size: 1.2rem;
         font-family: $eng;
-        font-weight: 400;
         @include mq(pc) {
           -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
@@ -262,14 +261,6 @@
         }
 
         &-slide {
-          @include mq(pc) {
-            @for $i from 1 through 10 {
-              &:nth-child(#{$i}) {
-                animation-delay: 0.15s * $i - 0.15s;
-              }
-            }
-          }
-
           a {
             display: flex;
             justify-content: flex-start;
@@ -707,14 +698,6 @@
           }
           &-slide {
             height: auto;
-            @include mq(pc) {
-              @for $i from 1 through 10 {
-                &:nth-child(#{$i}) {
-                  animation-delay: 0.15s * $i - 0.15s;
-                }
-              }
-            }
-
             a {
               // display: flex;
               // flex-direction: column;

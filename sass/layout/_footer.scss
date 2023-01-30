@@ -89,9 +89,6 @@
         padding: 48px 0;
       }
 
-      .commonHead01 {
-
-      }
       .lead {
         line-height: 1.6;
         color: #fff;
@@ -271,7 +268,7 @@
             color: rgba($txt-color,0.8);
             border-bottom: 1px solid;
             padding-bottom: 2px;
-            transition: opacity 0.3;
+            transition: opacity 0.3s;
             @include mq(pc) {
               &:hover {
                 opacity: 0.7;
@@ -312,11 +309,10 @@
     }
     a {
       font-size: 1.2rem;
-      font-weight: 400;
       color: rgba($txt-color,0.6);
       border-bottom: 1px solid;
       padding-bottom: 4px;
-      transition: opacity 0.3;
+      transition: opacity 0.3s;
       @include mq(pc) {
         &:hover {
           opacity: 0.7;
@@ -379,7 +375,7 @@
       background-color: #eef2f1;
       border-radius: 100px;
       padding: 12px 22px;
-      transition: opacity 0.3;
+      transition: opacity 0.3s;
       @include mq(pc) {
         &:hover {
           opacity: 0.7;
@@ -402,9 +398,6 @@
       }
     }
   }
-  &__logo {
-
-  }
 
 }
 
@@ -423,7 +416,7 @@
     right: 4px;
     bottom: 4px;
   }
-  
+
   .js-scroll &{
 		opacity: 1;
     transform: translate(0);

@@ -14,7 +14,6 @@ li{list-style: none;}
 img{vertical-align: bottom;-webkit-backface-visibility: hidden;backface-visibility: hidden;}
 .clearfix:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
 
-
 ::-moz-selection {
 		background: $primary-color;
 		color: #ffffff;
@@ -88,21 +87,9 @@ _:-ms-lang(x)::-ms-backdrop, body {
 	}
 }
 
-body:not(.front-page) .main{
-	padding-bottom: 120px;
-	@include mq(sp){
-		padding-bottom: 48px;
-	}
-}
-
 a{
 	color: $link-color;
 	transition: opacity 0.24s,color 0.24s;
-	// @include mq(pc) {
-	// 	&:hover {
-	// 		color: $primary-color;
-	// 	}
-	// }
 }
 
 /* classes */
@@ -133,93 +120,6 @@ a{
 			bottom: 78px;
 		}
 	}
-}
-
-/* ============================================
-// loading
-// ==========================================*/
-#loading{
-	display: none;
-}
-.js-loaded.once #loading{
-	&::before{
-		height: 0;
-		opacity: 0;
-		transition-delay: 0.4s;
-	}
-	.loading__body{
-		opacity: 0;
-		transition-delay: 0.4s;
-	}
-}
-.once #loading{
-	display: block;
-	opacity: 1;
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: 9999;
-	pointer-events: none;
-	&::before{
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: -1;
-		height: 100%;
-		background: #ffffff;
-		transition: height 1s,opacity 0.8s;
-	}
-	.loading{
-		&__inner{
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			width: 100%;
-			height: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			padding: 40px;
-			transform: translate(-50%,-50%);
-			@include mq(sp) {
-				padding: 24px;
-			}
-		}
-		&__body{
-			text-align: center;
-			transition: opacity 0.4s;
-		}
-		&__title{
-			font-size: 1.6rem;
-			font-weight: bold;
-			@include mq(sp) {
-				font-size: 1.3rem;
-			}
-		}
-		&__copy{
-			width: 85%;
-			margin: 0 auto;
-			.eng{
-				width: 100%;
-			}
-			.ja{
-				width: 49.38%;
-				margin-left: 20px;
-			}
-			img{
-				max-width: 100%;
-			}
-		}
-	}
-}
-@keyframes wave-text{
-	00%{transform: translateY(0em);}
-	60%{transform: translateY(-0.2em);}
-	100%{transform: translateY(0em);}
 }
 
 /* ============================================
@@ -315,6 +215,8 @@ a{
 			}
 			&__main {
 				display: flex;
+				margin-right: 16px;
+
 				img {
 					@include mq(sp) {
 						height: 14px !important;
@@ -458,14 +360,6 @@ a{
 }
 
 /* ============================================
-// keyframes
-// ==========================================*/
-@keyframes zoomOut{
-	0%{transform: scale(1.15) rotate(0.00001deg);}
-	100%{transform: scale(1) rotate(0.00001deg);}
-}
-
-/* ============================================
 // PC SP 出し分け
 // ==========================================*/
 .u-pcOnly {
@@ -476,24 +370,6 @@ a{
 .u-spOnly {
 	@include mq(pc) {
 		display: none !important;
-	}
-}
-
-/* ============================================
-// 下層 ヘッダー固定
-// ==========================================*/
-body[class^="lower-"] {
-	#container {
-		padding-top: 120px;
-		@include mq(tab) {
-			padding-top: 100px;
-		}
-		@include mq(sp) {
-			padding-top: 80px;
-		}
-	}
-	.fixedHeader {
-		transform: translateY(0);
 	}
 }
 
