@@ -20,6 +20,7 @@
     position: relative;
     @include mq(sp) {
       margin-top: 60px;
+      padding-top: 24px;
       display: block;
     }
 
@@ -53,7 +54,9 @@
       }
       @include mq(sp) {
         max-width: 92%;
-        margin: 0 auto;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: 0;
       }
     }
     &__bg {
@@ -90,7 +93,7 @@
         @include mq(sp) {
           // display: none;
           background: linear-gradient(-60deg, rgba($secondary-color,0.56) 50%, rgba(0,0,0,0) 70%);
-          border-radius: 0 0 50px 0;
+          border-radius: 24px 0 0 24px;
         }
       }
       &::after {
@@ -106,36 +109,27 @@
         z-index: 2;
         @include mq(sp) {
           background: linear-gradient(-60deg, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 60%);
-          border-radius: 0 0 50px 0;
-          // display: none;
-          // background-color: rgba($secondary-color,0.56);
+          border-radius: 24px 0 0 24px;
         }
       }
 
       .swiper-slide {
         overflow: hidden;
         border-radius: 50px 0 0 50px;
-          @include mq(sp) {
-            border-radius: 50px 0 50px 0;
-          }
+        @include mq(sp) {
+          border-radius: 32px 0 0 32px;
+        }
         img {
           max-height: 720px;
           border-radius: 50px 0 0 50px;
+          transition: 10s 1s ease-out;
+          transform: scale(1.05);
           @include mq(sp) {
-            border-radius: 50px 0 50px 0;
+            border-radius: 32px 0 0 32px;
             min-height: 240px;
             object-position: 30%;
           }
-          transition: 10s 1s ease-out;
-          transform: scale(1.05);
         }
-        /* スライド アクティブ時 */
-        // &[class*=-active] {
-        //   img {
-        //     transition-delay: 0s;
-        //     transform: scale(1);
-        //   }
-        // }
       }
     }
     &__copy {
@@ -294,6 +288,9 @@
                 }
               }
             }
+            @include mq(sp) {
+              align-items: center;
+            }
 
             .imgArea {
               flex: 0 0 30%;
@@ -339,7 +336,7 @@
                 -webkit-line-clamp: 2;
                 @include mq(sp) {
                   line-height: 1.6;
-                  margin-top: 8px;
+                  margin-top: 6px;
                   // -webkit-line-clamp: 1;
                 }
               }
@@ -607,6 +604,14 @@
       @include mq(sp) {
         margin-top: 64px;
       }
+
+      .commonHead01 {
+        .eng {
+          @include mq(sp) {
+            font-size: 4rem;
+          }
+        }
+      }
     }
     // 一日の流れ
     &.sec__oneday {
@@ -839,7 +844,7 @@
         }
         @include mq(sp) {
           flex-direction: column;
-          border-radius: 80px 0 80px 0;
+          border-radius: 50px 0 50px 0;
           padding: 56px 8% 72px;
         }
 
@@ -855,8 +860,9 @@
           top: 0;
           left: 0;
           border-radius: 180px 0 180px 0;
+          opacity: 0.4;
           @include mq(sp) {
-            border-radius: 80px 0 80px 0;
+            border-radius: 50px 0 50px 0;
           }
         }
         // 緑色 ボーダー
@@ -873,7 +879,7 @@
           z-index: -1;
           transition: all 0.3s;
           @include mq(sp) {
-            border-radius: 80px 0 80px 0;
+            border-radius: 50px 0 50px 0;
           }
         }
       }

@@ -81,11 +81,11 @@
 				z-index: 10;
 			}
 		}
-
 		@include mq(sp) {
 			font-size: 3.4rem;
 		}
 
+		// アンダーライン
 		&:before {
 			content: '';
 			position: absolute;
@@ -125,8 +125,10 @@
 			color: #fff;
 			// background:linear-gradient(transparent 70%, #007a49 60%);
 			line-height: 1;
+
+			// アンダーライン
 			&:before {
-				background-color: $txt-color;
+				background-color: #007a49;
 			}
 			span {
 				&:first-child {
@@ -159,8 +161,6 @@
 			}
 		}
 	}
-
-
 }
 
 /*--------------------
@@ -183,7 +183,9 @@
 			}
 		}
 		@include mq(sp) {
-			padding: 10px 36px;
+			min-width: 200px;
+			padding: 9px 36px;
+			justify-content: center;
 		}
 
 		.icon {

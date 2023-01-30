@@ -1,7 +1,6 @@
 /*-------------------------------
   メインビジュアル swiper
 -------------------------------*/
-
 $(window).on('load', function() {
   let swipeOption = {};
   if ( $(".mainVisual__hero .swiper-slide").length > 1 ) {
@@ -32,17 +31,18 @@ $(window).on('load', function() {
   const mainVisual__Swiper = new Swiper('.mainVisual__hero .swiper', swipeOption);
 });
 
+
 /*-------------------------------
   新着求人情報 swiper
 -------------------------------*/
 const newJobs__Swiper = new Swiper('.newJobs__swiper', {
   spaceBetween: 28,
   speed: 500,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-    waitForTransition: false,
-  },
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: false,
+  //   waitForTransition: false,
+  // },
   breakpoints: {
     835: {
       spaceBetween: 24,
@@ -90,7 +90,7 @@ var listener02 = function(event) {
       const Destination = ListItem.querySelector('.commonHead01')
       const BenchMark = ListItem.querySelector('.txtArea');
 
-      BenchMark.parentNode.insertBefore(Target, BenchMark.nextElementSibling);
+      BenchMark.parentNode.insertBefore(Target, BenchMark);
     })
   }
 };
