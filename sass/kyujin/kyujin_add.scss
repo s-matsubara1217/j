@@ -52,17 +52,9 @@
   }
   .btn {
     border-radius: 100px;
-    background: $gradient-primary;
-    @include mq(pc) {
-      transition: transform 0.3s;
-      &:hover {
-        opacity: 1;
-        transform: scale(1.05);
-      }
-    }
 
     &.btn_secondary {
-      background: $gradient-secondary;
+      background-color: #007a49;
     }
     &.btn_external {
       &:after  {
