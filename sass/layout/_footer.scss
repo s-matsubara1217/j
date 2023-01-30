@@ -412,6 +412,7 @@
   opacity: 0;
   transform: translate(12px,-12px);
 	transition: opacity 0.4s,transform 0.4s;
+  pointer-events: none;
   @include mq(sp){
     right: 4px;
     bottom: 4px;
@@ -420,6 +421,7 @@
   .js-scroll &{
 		opacity: 1;
     transform: translate(0);
+    pointer-events: auto;
 	}
   a {
     display: block;

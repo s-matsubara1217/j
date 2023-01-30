@@ -27,13 +27,14 @@
 	breadcrumb
 --------------------*/
 .breadcrumb {
+	text-align: right;
 	&__list{
 		position: relative;
     z-index: 1;
     overflow-x: auto;
     white-space: nowrap;
 		padding: 12px 20px;
-		background: #f0ece6;
+		background: $bg-color;
 		@include mq(sp) {
 			padding: 10px;
 		}

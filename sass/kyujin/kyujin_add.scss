@@ -15,10 +15,8 @@
 .lower-whatsnew {
   .l-main {
     padding-top: 80px;
-    padding-bottom: 100px;
     @include mq(sp) {
       padding-top: 56px;
-      padding-bottom: 56px;
     }
   }
 

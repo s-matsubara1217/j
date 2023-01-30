@@ -13,13 +13,11 @@
   // メインビジュアル
   .mainVisual {
 
-    margin-top: 84px;
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
     position: relative;
     @include mq(sp) {
-      margin-top: 60px;
       padding-top: 24px;
       display: block;
     }
