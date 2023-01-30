@@ -323,7 +323,7 @@ body{
 	a {
 		display: flex;
 		justify-content: flex-start;
-		align-items: flex-start;
+		align-items: center;
 		transition: opacity 0.3s;
 		@include mq(pc) {
 			&:hover {
@@ -334,26 +334,26 @@ body{
 			display: block;
 		}
 
-		.main {
-			margin-right: 12px;
+	}
+	&__main {
+		margin-right: 12px;
+		@include mq(sp) {
+			margin-right: 0;
+		}
+		img {
 			@include mq(sp) {
-				margin-right: 0;
-			}
-			img {
-				@include mq(sp) {
-					height: 18px;
-				}
+				height: 18px;
 			}
 		}
-		.sub {
-			color: #010101;
-			margin-top: 10px;
-			font-size: 1.3rem;
-			@include mq(sp) {
-				display: inline-block;
-				margin-top: 4px;
-				font-size: 1.2rem;
-			}
+	}
+	&__sub {
+		color: #010101;
+		margin-top: 10px;
+		font-size: 1.3rem;
+		@include mq(sp) {
+			display: inline-block;
+			margin-top: 4px;
+			font-size: 1.2rem;
 		}
 	}
 }

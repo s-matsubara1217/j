@@ -35,8 +35,9 @@
       }
     }
     &__main {
+      display: flex;
+
       @include mq(sp) {
-        display: flex;
         margin-top: 5px;
       }
       img {

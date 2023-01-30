@@ -153,7 +153,7 @@ a{
 		overflow-y: auto;
 		position: relative;
 		@include mq(sp) {
-			padding: 60px 8%;
+			padding: 60px 8% 48px;
 		}
 
 		// 背景画像
@@ -174,17 +174,20 @@ a{
 			pointer-events: none;
 			opacity: 0.5;
     	filter: blur(5px);
+			@include mq(sp) {
+				opacity: 0.2;
+				filter: blur(12px);
+			}
 		}
 
 		&__wrap {
 			width: 100%;
 			height: 100%;
-			background-color: #fff;
 			padding: 5vw 7%;
 			display: flex;
 			overflow: auto;
 			@include mq(sp) {
-				padding: 8vw 7%;
+				padding: 0;
 			}
 
 			&::-webkit-scrollbar {
@@ -200,9 +203,6 @@ a{
 		}
 		&__inner{
 			margin: auto;
-			@include mq(sp) {
-				padding-top: 8px;
-			}
 		}
 		&__logo{
 			margin-bottom: 30px;
@@ -224,7 +224,7 @@ a{
 				}
 			}
 			&__sub {
-				color: #555555;
+				color: #555555 !important;
 				@include mq(sp) {
 					font-size: 1rem;
 					display: block;
@@ -240,15 +240,15 @@ a{
 				justify-content: space-between;
 				@include mq(sp) {
 					display: block;
-					border-top: 1px solid #dedede;
+					border-top: 1px solid rgba($txt-color,0.2);
 				}
 				&__item{
 					flex: 0 0 48%;
 					font-weight: bold;
-					border-bottom: 1px solid #dedede;
+					border-bottom: 1px solid rgba($txt-color,0.2);
 					@include mq(pc) {
 						&:nth-child(-n+2){
-							border-top: 1px solid #dedede;
+							border-top: 1px solid rgba($txt-color,0.2);
 						}
 					}
 					a {
