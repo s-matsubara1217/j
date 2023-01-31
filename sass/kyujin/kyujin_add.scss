@@ -16,7 +16,7 @@
   .l-main {
     padding-top: 80px;
     @include mq(sp) {
-      padding-top: 56px;
+      padding-top: 48px;
     }
   }
 
@@ -174,6 +174,9 @@
       font-size: 1.3rem;
     }
   }
+  .custom-form .category_list input[type=checkbox]+label {
+    border: 1px solid #dedede;
+  }
 }
 
 /*--------------------
@@ -183,7 +186,7 @@
   .l-main {
     padding-top: 64px;
     @include mq(sp) {
-      padding-top: 32px;
+      padding-top: 28px;
     }
   }
   .job_body_block {
@@ -192,88 +195,57 @@
       margin: 32px 0;
     }
   }
-  .outline,
-  .appeal {
-    position: relative;
-    padding-top: 64px;
+  .outline_ttl {
+    background-color: $primary-color;
+    padding: 0.8em 1.2em;
+    border-radius: 10px 0 10px 0;
+    margin-bottom: 8px;
     @include mq(sp) {
-      padding-top: 32px;
+      padding: 0.6em 1em;
+      margin-bottom: 4px;
     }
 
-    &::before {
-      content: '';
+    .txt {
+      color: #fff;
+      font-size: 2.1rem;
       display: inline-block;
-      background-color: #f0ece6;
-      width: 200vw;
-      height: 300px;
-      position: absolute;
-      top: 0;
-      left: -50vw;
-      @include mq(sp) {
-        height: 160px;
-      }
-    }
-  }
-  .outline_wrap,
-  .appeal_wrap {
-    position: relative;
-    padding: 64px 50px;
-    background-color: #fff;
-    border-radius: 10px;
-    @include mq(sp) {
-      padding: 40px 24px;
-    }
-  }
-  .outline_ttl,
-  .appeal_ttl {
-    text-align: center;
-    padding: 0;
-    margin-bottom: 32px;
-    @include mq(sp) {
-      margin-bottom: 16px;
-    }
-
-    &:after {
-      content: none;
-    }
-
-    .eng {
-      font-size: 3.8rem;
-      line-height: 1;
-      @include mq(sp) {
-        font-size: 3rem;
-      }
-    }
-    .ja {
-      font-size: 1.8rem;
+      position: relative;
       font-weight: bold;
-      line-height: 1;
-      margin-top: 12px;
       @include mq(sp) {
-        font-size: 1.5rem;
-        margin-top: 8px;
+        font-size: 1.7rem;
+      }
+
+      // アンダーライン
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 4px;
+        width: 0%;
+        height: 10px;
+        background: #007a49;
+        transition: all 0.4s;
+        transition-delay: 0.5s;
+        @include mq(sp) {
+          height: 8px;
+        }
+      }
+
+      &.anime {
+        &.js-active {
+          &:before {
+            width: 100%;
+          }
+        }
       }
     }
-  }
-  .commonLink01 {
-    a {
-      justify-content: center;
-    }
+
   }
   .fixed_convertion {
     .convertion {
       .btn_convertion {
-        background: $gradient-primary;
         background-color: $primary-color;
         border-radius: 100px;
-
-        @include mq(pc) {
-          transition: transform 0.3s;
-          &:hover {
-            opacity: 1;
-            transform: scale(1.05);
-          }
-        }
 
         &:after {
           top: 50%;
@@ -286,9 +258,26 @@
       }
     }
   }
-  .commonLink01 {
+  .gMap_link {
+    @include mq(pc) {
+      &:hover {
+        color: $primary-color;
+        opacity: 0.7;
+      }
+    }
+  }
+  .page_back {
+    a {
+      @include mq(pc) {
+        &:hover {
+          color: $primary-color;
+          opacity: 0.7;
+        }
+      }
+    }
     @include mq(sp) {
-      margin-top: 40px;
+      padding-top: 16px;
+      padding-bottom: 0;
     }
   }
 }
@@ -299,10 +288,8 @@
 .lower-whatsnew {
   .l-main {
     padding-top: 48px;
-    padding-bottom: 80px;
     @include mq(sp) {
-      padding-top: 32px;
-      padding-bottom: 48px;
+      padding-top: 20px;
     }
   }
   .job {

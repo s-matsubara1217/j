@@ -81,7 +81,7 @@
                 textHeight = '100',
                 maxHeight = ['70px' , '5000px'],
                 speed = 400,
-                insertHtml = '<div class="more_link_inner"><a class="more_link is_sp">もっと見る</a></div>';
+                insertHtml = '<div class="more_link_inner"><a href="javascript:void(0)"; class="more_link is_sp">もっと見る</a></div>';
 
             if($slideDownTextHeight > textHeight) {
 

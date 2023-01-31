@@ -8,6 +8,9 @@
 // ==========================================*/
 .sec__recruit{
   margin-top: 140px;
+  @include mq(tab) {
+    margin-top: 110px;
+  }
   @include mq(sp) {
     margin-top: 80px;
   }
@@ -400,6 +403,14 @@
   }
 
 }
+.lower-kyujin_d {
+  .footer {
+    padding-bottom: 140px + 92px;
+    @include mq(sp) {
+      padding-bottom: 96px + 68px;
+    }
+  }
+}
 
 /* ============================================
 // ページトップ
@@ -437,6 +448,14 @@
         height: 72px;
         width: auto;
       }
+    }
+  }
+}
+.lower-kyujin_d {
+  .pagetop {
+    bottom: 16px + 92px;
+    @include mq(sp) {
+      bottom: 4px + 68px;
     }
   }
 }

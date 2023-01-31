@@ -25,6 +25,7 @@
   }
   &__logoTxt {
     padding: 0 40px;
+    padding-top: 6px;
     @include mq(sp) {
       padding: 0 20px;
     }
