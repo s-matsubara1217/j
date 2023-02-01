@@ -7,13 +7,6 @@
 // リクルート
 // ==========================================*/
 .sec__recruit{
-  margin-top: 140px;
-  @include mq(tab) {
-    margin-top: 110px;
-  }
-  @include mq(sp) {
-    margin-top: 80px;
-  }
 
   .recruit {
     position: relative;

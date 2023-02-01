@@ -12,14 +12,99 @@
 	pageHeader
 --------------------*/
 .pageHeader{
+	position: relative;
+	width: calc(100% - 64px);
+	height: 350px;
+	margin-right: 0;
+	margin-left: auto;
+	background-color: #1b2e26;
+	border-radius: 0 0 0 50px;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
-	width: 100%;
-	height: 400px;
-	background-color: #eee;
+	padding-left: 7.2%;
 	@include mq(sp) {
-		height: 250px;
+		width: calc(100% - 24px);
+		height: 190px;
+		border-radius: 0 0 0 28px;
+	}
+
+	// 白色背景
+	&::before {
+		content: '';
+		display: inline-block;
+		background-color: #fff;
+		width: 200vw;
+		height: 80%;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		z-index: -1;
+		transform: translateX(-50%);
+		border-top: 1px solid #dedede;
+		@include mq(sp) {
+			height: 76%;
+		}
+	}
+	// 装飾 リーフ
+	&::after {
+		content: '';
+		display: inline-block;
+		background-image: url(../img/common/deco_leaf_lower.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 296px;
+		height: 312px;
+		position: absolute;
+		bottom: -96px;
+		right: 12px;
+		@include mq(sp) {
+			transform: scale(0.5);
+			transform-origin: bottom right;
+			bottom: -48px;
+			right: 8px;
+		}
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0.56;
+		border-radius: 0 0 0 50px;
+	}
+	&__ttl {
+		color: #fff;
+		position: relative;
+		z-index: 2;
+		.eng {
+			font-size: 6rem;
+			line-height: 1;
+			font-weight: bold;
+			@include mq(sp) {
+				font-size: 3.6rem;
+			}
+		}
+		.ja {
+			font-weight: bold;
+			margin-top: 8px;
+			@include mq(sp) {
+				margin-top: 0;
+			}
+		}
+	}
+}
+.lower-kyujin_l,
+.lower-whatsnew {
+	.pageHeader {
+		&__img {
+			background-image: url(../img/kyujin/pageheader.jpg);
+			background-position: right;
+		}
 	}
 }
 
@@ -27,21 +112,24 @@
 	breadcrumb
 --------------------*/
 .breadcrumb {
-	text-align: right;
+	&__inner {
+		max-width: 1180px;
+	}
 	&__list{
 		position: relative;
     z-index: 1;
     overflow-x: auto;
     white-space: nowrap;
-		padding: 12px 20px;
+		padding: 12px 0;
+		// padding: 12px 20px;
 		background: $bg-color;
 		@include mq(sp) {
-			padding: 10px;
+			// padding: 10px;
+			padding: 10px 0;
 		}
 		&__item{
 			display: inline;
-			font-size: 1.1rem;
-			font-weight: bold;
+			font-size: 1.3rem;
 			color: $txt-color;
 			margin: 0 2px;
 			&::after{

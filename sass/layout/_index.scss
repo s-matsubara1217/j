@@ -10,6 +10,17 @@
 
 .front-page {
 
+  // 余白
+  main {
+    padding-bottom: 140px;
+    @include mq(tab) {
+      padding-bottom: 110px;
+    }
+    @include mq(sp) {
+      padding-bottom: 80px;
+    }
+  }
+
   // メインビジュアル
   .mainVisual {
 
