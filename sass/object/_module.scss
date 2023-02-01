@@ -292,6 +292,35 @@
 			}
 		}
 	}
+	&.-noLine {
+		.eng {
+			&::before {
+				content: none;
+			}
+		}
+	}
+	&.-center {
+		text-align: center;
+	}
+}
+.commonHead02 {
+	display: inline-block;
+	border-bottom: 2px solid $primary-color;
+	font-size: 1.8rem;
+	&:first-letter {
+		color: $primary-color;
+	}
+
+	&.eng {
+		line-height: 1.4;
+	}
+	&.-white {
+		color: #fff;
+		border-bottom: 2px solid #fff;
+		&:first-letter {
+			color: #fff;
+		}
+	}
 }
 
 /*--------------------

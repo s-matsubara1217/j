@@ -66,7 +66,296 @@
 
 // 詳細
 .lower-interview_d {
-  .interview {
 
+  // イントロ
+  .sec__intro {
+    padding-top: 120px;
+    position: relative;
+    background-color: #fff;
+
+    .intro {
+      &__inner {
+        max-width: 1180px;
+      }
+      &__main {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .txtArea {
+          .lead {
+            font-size: 3.2rem;
+            font-weight: bold;
+            display: inline;
+            line-height: 1.75;
+            background: linear-gradient(#ebf141, #ebf141) 0 100%/0 40% no-repeat;
+            transition: background 1s;
+            text-decoration: none;
+
+            &.js-active {
+              background-size: 100% 40%;
+            }
+          }
+          .name-holder {
+            margin-top: 40px;
+
+            .name {
+              .kanji {
+                font-size: 2.4rem;
+                font-weight: bold;
+              }
+              .hiragana {
+                display: inline-block;
+                margin-left: 8px;
+              }
+            }
+            .info {
+              margin-top: -4px;
+
+              .head {
+
+              }
+              .desc {
+
+              }
+            }
+          }
+          .profile {
+            margin-top: 32px;
+
+            .desc {
+              margin-top: 8px;
+            }
+          }
+        }
+        .imgArea {
+          flex: 0 0 50%;
+          max-width: 540px;
+          margin-left: 4.5%;
+
+          .img {
+            @include keepAspect(78.5%);
+            img {
+              border-radius: 40px 0 40px 0;
+            }
+          }
+        }
+      }
+      &__sub {
+        color: #fff;
+        margin-top: 40px;
+        position: relative;
+
+        // 背景色 $bg-color
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 200vw;
+          height: 50%;
+          background-color: $bg-color;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          pointer-events: none;
+          transform: translateX(-50%);
+        }
+
+        &__wrap {
+          position: relative;
+          z-index: 2;
+          background-color: $primary-color;
+          padding: 40px 4.5%;
+          border-radius: 16px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+        }
+
+        .head {
+          flex-shrink: 0;
+          margin-right: 3.2%;
+        }
+        .desc {
+
+        }
+      }
+    }
   }
+  // インタビュー
+  .sec__interview {
+    padding-top: 88px;
+    .interview {
+      &__inner {
+
+      }
+      &__head {
+
+      }
+      &__body {
+        margin-top: 56px;
+      }
+
+      &__list {
+        &__item {
+          // 共通
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          margin-top: 120px;
+          &:first-child {
+            margin-top: 0;
+          }
+          .imgArea {
+            flex: 0 0 42%;
+            max-width: 500px;
+            .img {
+              @include keepAspect(76%);
+
+              img {
+                border-radius: 54px 0 54px 0;
+              }
+            }
+          }
+          .txtArea {
+            .num {
+              color: $primary-color;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              font-family: $eng;
+              font-size: 1.6rem;
+              font-weight: bold;
+              line-height: 1;
+              &::before {
+                content: '';
+                display: inline-block;
+                width: 64px;
+                height: 1px;
+                background-color: $primary-color;
+                margin-right: 20px;
+              }
+            }
+            .lead {
+              font-size: 2.4rem;
+              font-weight: bold;
+              line-height: 1.6;
+              margin-top: 24px;
+            }
+            .desc {
+              margin-top: 20px;
+            }
+          }
+
+          @include mq(pc) {
+            // 奇数
+            &:nth-child(odd) {
+              .imgArea {
+                margin-right: 4.2%;
+              }
+            }
+            // 偶数
+            &:nth-child(even) {
+              flex-direction: row-reverse;
+              .imgArea {
+                margin-left: 4.2%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // 一日の流れ
+  .sec__oneday {
+    padding-top: 110px;
+    .oneday {
+      &__inner {
+        max-width: 1180px;
+      }
+      &__wrap {
+        background-color: #fff;
+        border-radius: 100px 0 100px 0;
+        position: relative;
+        padding: 96px 0 56px;
+      }
+      &__head {
+        position: absolute;
+        top: -28px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &__body {
+
+      }
+
+
+      &__list {
+        &__item {
+          border-bottom: 2px solid #eef2f1;
+          padding: 20px 9%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          &:first-child {
+            padding-top: 0;
+          }
+          &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+
+          .time {
+            flex: 0 0 80px;
+            margin-right: 3.6%;
+            font-family: $eng;
+            font-size: 2rem;
+            font-weight: bold;
+            color: $primary-color;
+            margin-top: -4px;
+
+            // リーフ
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              background-color: $third-color;
+              border-radius: 10px 0 10px 0;
+              margin-right: 8px;
+            }
+          }
+          .todo {
+            .term {
+              font-size: 1.8rem;
+              font-weight: bold;
+              line-height: 1.6;
+            }
+            .desc {
+              margin-top: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+  // あなたへメッセージ
+  .sec__message {
+    .message {
+      &__inner {
+
+      }
+
+      .txtArea {
+        .txt {
+
+        }
+      }
+      .imgArea {
+        .img {
+
+        }
+      }
+    }
+  }
+
 }
