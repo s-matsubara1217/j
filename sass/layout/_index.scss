@@ -707,26 +707,6 @@
           }
           &-slide {
             height: auto;
-            a {
-              // display: flex;
-              // flex-direction: column;
-              // justify-content: flex-start;
-              // height: 100%;
-              @include mq(pc) {
-                display: block;
-                height: 100%;
-                position: relative;
-                padding-bottom: 40px;
-              }
-
-              .info {
-                @include mq(pc) {
-                  position: absolute;
-                  bottom: 0;
-                  left: 0;
-                }
-              }
-            }
           }
           &-button {
             display: flex;

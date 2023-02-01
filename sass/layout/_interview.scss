@@ -1,0 +1,72 @@
+@charset "utf-8";
+@use '../foundation/mixins' as *;
+// @include mq(pc)
+// @include mq(tab)
+// @include mq(sp)
+
+/* ============================================
+// インタビュー
+// ==========================================*/
+
+// 一覧
+.lower-interview_l {
+  // 余白
+  .l-main {
+    padding-top: 140px;
+    padding-bottom: 100px;
+    @include mq(sp) {
+      padding-top: 72px;
+      padding-bottom: 56px;
+    }
+  }
+
+  .interview {
+    &__inner {
+      max-width: 1180px;
+    }
+    &__cardList {
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+      flex-wrap: wrap;
+      @include mq(pc) {
+        margin: -48px 0;
+      }
+      @include mq(sp) {
+        display: block;
+        width: 85%;
+        margin: 0 auto;
+      }
+      &__item {
+        max-width: 320px;
+        @include mq(pc) {
+          flex: 0 0 30%;
+          margin-top: 48px;
+          margin-bottom: 48px;
+          margin-right: 5%;
+          &:nth-child(3n+2) {
+            animation-delay: 0.15s;
+          }
+          &:nth-child(3n+3) {
+            margin-right: 0;
+            animation-delay: 0.3s;
+          }
+        }
+        @include mq(sp) {
+          margin: 0 auto;
+          margin-top: 56px;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 詳細
+.lower-interview_d {
+  .interview {
+
+  }
+}
