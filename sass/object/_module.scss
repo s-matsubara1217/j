@@ -88,12 +88,14 @@
 			opacity: 0.56;
 			transform: scale(1.08);
 			transition: transform 0.6s;
+			// transition: opacity 0.6s, transform 0.6s;
 		}
 	}
 	&__ttl {
 		color: #fff;
 		position: relative;
 		z-index: 2;
+		opacity: 0;
 		.eng {
 			font-size: 6rem;
 			line-height: 1;
@@ -115,8 +117,12 @@
 	.pageHeader {
 		&__img {
 			.bg {
+				// opacity: 0.56;
 				transform: scale(1);
 			}
+		}
+		&__ttl {
+			opacity: 1;
 		}
 
 		&:after {
