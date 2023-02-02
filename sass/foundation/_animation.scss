@@ -436,9 +436,11 @@
 
       .swiper-slide {
         &[class*=-active] {
-          img {
-            transition-delay: 0s;
-            transform: scale(1);
+          .img {
+            img {
+              transition-delay: 0s;
+              transform: scale(1);
+            }
           }
         }
       }

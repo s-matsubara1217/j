@@ -18,14 +18,22 @@ $(function () {
         disableOnInteraction: false,
         waitForTransition: false,
       },
-      followFinger: false,
-      allowTouchMove: false,
+
+      navigation: {
+        nextEl: ".mainVisual__hero .swiper-button-next",
+        prevEl: ".mainVisual__hero .swiper-button-prev",
+      },
     }
   } else {
     // スライドが1枚
     swipeOption = {
       loop: false,
       autoplay: false,
+      navigation: {
+        nextEl: ".mainVisual__hero .swiper-button-next",
+        prevEl: ".mainVisual__hero .swiper-button-prev",
+      },
+      watchOverflow: true,
     }
   }
   const mainVisual__Swiper = new Swiper('.mainVisual__hero .swiper', swipeOption);
