@@ -67,11 +67,19 @@
 // 詳細
 .lower-interview_d {
 
+  // 余白
+  .l-main {
+    border-top: 1px solid #dedede;
+    padding-bottom: 100px;
+  }
   // イントロ
   .sec__intro {
     padding-top: 120px;
     position: relative;
     background-color: #fff;
+    @include mq(tab) {
+      padding-top: 100px;
+    }
 
     .intro {
       &__inner {
@@ -340,22 +348,42 @@
   }
   // あなたへメッセージ
   .sec__message {
+    padding-top: 100px;
     .message {
       &__inner {
-
+        background-color: #fff;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 40px 8% 44px;
+        border-radius: 16px;
       }
 
       .txtArea {
         .txt {
-
+          margin-top: 24px;
         }
       }
       .imgArea {
-        .img {
-
+        flex: 0 0 20.4%;
+        max-width: 244px;
+        margin-left: 7.2%;
+        @include keepAspect(100%);
+        img {
+          border-radius: 50%;
         }
       }
     }
+  }
+
+  .interview-date {
+    text-align: center;
+    margin-top: 56px;
+    font-size: 1.6rem;
+  }
+  .commonBtn01 {
+    text-align: center;
+    margin-top: 20px;
   }
 
 }
