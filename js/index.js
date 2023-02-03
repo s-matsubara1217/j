@@ -69,7 +69,6 @@ const newJobs__Swiper = new Swiper('.newJobs__swiper', {
 /** メディアクエリ **/
 var mediaQueryList01 = window.matchMedia("(max-width:834px)");
 var mediaQueryList02 = window.matchMedia("(min-width:835px)");
-
 const ListItems02 = document.querySelectorAll('.sec__common');
 const ListItemsArr02 = Array.prototype.slice.call(ListItems02);
 

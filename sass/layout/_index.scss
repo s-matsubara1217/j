@@ -642,7 +642,7 @@
       .desc {
         margin-top: 32px;
         @include mq(sp) {
-          max-width: 600px;
+          max-width: 400px;
           margin: 0 auto;
           margin-top: 28px;
         }
@@ -667,6 +667,9 @@
       .imgArea {
         margin-right: 0;
         margin-left: 7.2%;
+        @include mq(tab) {
+          margin-left: 6%;
+        }
         @include mq(sp) {
           margin-left: auto;
           margin-right: auto;
@@ -759,7 +762,7 @@
 
           .lead {
             margin-left: 48px;
-            max-width: 426px;
+            max-width: 450px;
             @include mq(tab) {
               max-width: 360px;
             }
@@ -883,7 +886,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 88px 15%;
+        padding: 88px 14%;
         position: relative;
         transition: transform 0.3s, box-shadow 0.3s;
         @include mq(pc) {
@@ -896,6 +899,9 @@
               right: 0;
             }
           }
+        }
+        @include mq(tab) {
+          padding: 80px 10%;
         }
         @include mq(sp) {
           flex-direction: column;
@@ -955,7 +961,7 @@
       }
       .txtArea {
         position: relative;
-        max-width: 240px;
+        max-width: 290px;
         @include mq(sp) {
           order: 1;
         }

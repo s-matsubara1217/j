@@ -359,6 +359,11 @@ a{
 		display: none !important;
 	}
 }
+.u-pcUpOnly {
+	@include mq(tab) {
+		display: none !important;
+	}
+}
 .u-spOnly {
 	@include mq(pc) {
 		display: none !important;
