@@ -54,17 +54,19 @@
 	$('body').on('click', 'a', function (e) {
 
 		var str = this.getAttribute('href').substring(0, 1),
-				$linktype = $(this).attr('target'),
-				$call = this.getAttribute('href').substring(0, 3);
+		$linktype = $(this).attr('target'),
+			$call = this.getAttribute('href').substring(0, 3);
+		$headerHeight = $('header').innerHeight();
 
 		if (str === "#") {
 			//スムーズスクロールをさせる
 			if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
 				var target = $(this.hash);
 				target = target.length ? target : $("[name=' + this.hash.slice(1) + ']");
+
 				if (target.length) {
 					$('html,body').animate({
-						scrollTop: target.offset().top
+						scrollTop: target.offset().top - $headerHeight - 20
 					}, 700);
 					return false;
 				}

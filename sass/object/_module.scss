@@ -151,6 +151,14 @@
 		}
 	}
 }
+.lower-jobs{
+	.pageHeader {
+		&__img {
+			background-image: url(../img/jobs/pageheader.jpg);
+			background-position: right;
+		}
+	}
+}
 
 /*--------------------
 	breadcrumb
@@ -162,7 +170,6 @@
     overflow-x: auto;
     white-space: nowrap;
 		padding: 12px 20px;
-		background: $bg-color;
 		@include mq(sp) {
 			padding: 10px;
 		}
@@ -190,6 +197,11 @@
 				}
 			}
 		}
+	}
+}
+.lower-jobs {
+	.breadcrumb {
+		background-color: #fff;
 	}
 }
 
@@ -376,6 +388,19 @@
 			@include mq(sp) {
         padding: 14px 40px;
       }
+		}
+	}
+	&.-white {
+		a {
+			background-color: #fff;
+			padding: 20px 88px;
+			@include mq(tab) {
+				padding: 18px 76px;
+			}
+
+			.txt {
+				color: $txt-color;
+			}
 		}
 	}
 }
