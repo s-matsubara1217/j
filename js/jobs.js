@@ -7,6 +7,8 @@ var mediaQueryList01 = window.matchMedia("(max-width:834px)");
 var mediaQueryList02 = window.matchMedia("(min-width:835px)");
 const ListItems01 = document.querySelectorAll('.jobs__blockList__item');
 const ListItemsArr01 = Array.prototype.slice.call(ListItems01);
+const ListItems02 = document.querySelectorAll('.aboutBlock__list__item');
+const ListItemsArr02 = Array.prototype.slice.call(ListItems02);
 
 /*** イベントリスナー ***/
 var listener01 = function(event) {
@@ -19,6 +21,14 @@ var listener01 = function(event) {
 
       Destination.parentNode.insertBefore(Target, Destination.nextElementSibling);
     });
+    ListItemsArr02.forEach(function (ListItem) {
+      const Target = ListItem.querySelector('.aboutBlock__list__item__imgArea');
+      const Destination = ListItem.querySelector('.aboutBlock__list__item__txtArea .term')
+
+      if (Target) {
+        Destination.parentNode.insertBefore(Target, Destination.nextElementSibling);
+      }
+    });
   }
 };
 var listener02 = function(event) {
@@ -30,6 +40,14 @@ var listener02 = function(event) {
       const Destination = ListItem.querySelector('.job-name')
 
       Destination.parentNode.insertBefore(Target, Destination.nextElementSibling);
+    });
+    ListItemsArr02.forEach(function (ListItem) {
+      const Target = ListItem.querySelector('.aboutBlock__list__item__imgArea');
+      const Destination = ListItem.querySelector('.aboutBlock__list__item__txtArea')
+
+      if (Target) {
+        Destination.parentNode.insertBefore(Target, Destination.nextElementSibling);
+      }
     });
   }
 };

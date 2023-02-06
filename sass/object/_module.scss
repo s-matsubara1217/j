@@ -46,6 +46,7 @@
 		opacity: 0;
 		transform: translate(15%,-15%);
 		transition: opacity 0.6s, transform 0.6s;
+		z-index: 2;
 		@include mq(sp) {
 			transform: scale(0.5) translate(15%,-15%);
 			transform-origin: bottom right;
@@ -393,13 +394,20 @@
 	&.-white {
 		a {
 			background-color: #fff;
+			
+			.txt {
+				color: $txt-color;
+			}
+		}
+	}
+	&.-long {
+		a {
 			padding: 20px 88px;
 			@include mq(tab) {
 				padding: 18px 76px;
 			}
-
-			.txt {
-				color: $txt-color;
+			@include mq(sp) {
+				padding: 12px 60px;
 			}
 		}
 	}
