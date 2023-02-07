@@ -113,7 +113,7 @@
       flex-wrap: wrap;
       margin: -10px -16px;
       @include mq(sp) {
-        margin: -8px;
+        margin: -7px -2%;
       }
       &.js-active {
         .jobs__anchorList__item {
@@ -131,7 +131,9 @@
           }
         }
         @include mq(sp) {
-          margin: 8px;
+          margin: 7px 2%;
+          width: 46%;
+          max-width: 200px;
         }
         a {
           background-color: #fff;
@@ -150,9 +152,10 @@
             }
           }
           @include mq(sp) {
-            padding: 10px 20px 10px 24px;
+            padding: 9px 10px 9px 12px;
             border: 2px solid $primary-color;
             font-size: 1.5rem;
+            justify-content: center;
           }
 
           &::after {
@@ -170,7 +173,7 @@
               height: 6px;
             }
           }
-         }
+        }
       }
     }
     // ブロック
@@ -370,7 +373,7 @@
                   justify-content: flex-start;
                   align-items: center;
                   @include mq(sp) {
-                    font-size: 1.6rem;
+                    font-size: 1.7rem;
                   }
 
                   // 縦ライン
