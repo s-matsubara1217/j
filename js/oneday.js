@@ -4,7 +4,7 @@ const welfare_swiper = new Swiper('.welfare__swiper', {
   fadeEffect: {
     crossFade: true,
   },
-  speed: 2000,
+  speed: 1000,
   // autoplay: {
   //   delay: 8000,
   //   disableOnInteraction: false,
