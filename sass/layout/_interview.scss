@@ -435,7 +435,7 @@
         padding: 96px 0 56px;
         @include mq(sp) {
           border-radius: 50px 0 50px 0;
-          padding: 64px 0 44px;
+          padding: 64px 0 36px;
         }
       }
 
@@ -506,11 +506,14 @@
           display: inline-block;
           background-color: $primary-color;
           width: 2px;
-          height: 100%;
+          height: calc(100% - 3px);
           position: absolute;
           top: 0;
           left: calc(9% + 7px);
           z-index: 2;
+          @include mq(sp) {
+            left: calc(7.2% + 6px);
+          }
         }
         &__item {
           border-bottom: 2px solid #eef2f1;
@@ -526,8 +529,6 @@
             padding-top: 0;
           }
           &:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
             position: relative;
 
             // 最後の縦ライン見えないように
@@ -541,6 +542,9 @@
               top: 20px;
               left: 9%;
               z-index: 9;
+              @include mq(sp) {
+                left: 7.2%;
+              }
             }
           }
 
@@ -593,6 +597,13 @@
               }
             }
           }
+        }
+      }
+      .annotation {
+        padding: 28px 9% 0;
+        line-height: 1.6;
+        @include mq(sp) {
+          padding: 20px 7.2% 0;
         }
       }
     }
