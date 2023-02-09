@@ -325,9 +325,9 @@
             }
           }
           .txtArea {
-            margin-top: 16px;
+            margin-top: 16px + 30px;
             @include mq(sp) {
-              margin-top: 12px;
+              margin-top: 12px + 26px;
             }
 
             .term {
@@ -361,16 +361,36 @@
         position: relative;
         cursor: pointer;
 
+        &.oneSlide {
+          cursor: auto;
+          &::after {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #00ae68;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            @include mq(sp) {
+              bottom: -20px;
+            }
+          }
+        }
+
         &-slide {
 
         }
         &-pagination {
-          position: relative;
-          bottom: auto;
-          left: auto;
-          margin-top: 4px;
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          transform: translateY(100%);
           @include mq(sp) {
-            margin-top: 2px;
+            bottom: 0;
           }
 
           &-bullet {
@@ -380,6 +400,7 @@
           }
         }
       }
+
     }
   }
 
