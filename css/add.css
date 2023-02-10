@@ -26,3 +26,15 @@
     padding: 3em 0;
   }
 }
+.lower-interview_d .sec__oneday .oneday__list__item .time {
+  flex: 0 0 90px;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 834px) {
+  .lower-interview_d .sec__oneday .oneday__list__item .time {
+    flex: 0 0 75px;
+  }
+}
+.lower-interview_d .sec__oneday .oneday__list__item .todo {
+  flex: 1 1 auto;
+}
