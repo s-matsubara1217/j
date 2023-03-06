@@ -167,6 +167,13 @@
 		}
 	}
 }
+.lower-data{
+	.pageHeader {
+		&__img {
+			background-image: url(../img/data/pageheader.jpg);
+		}
+	}
+}
 
 /*--------------------
 	breadcrumb
