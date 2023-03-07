@@ -109,9 +109,9 @@ function barChart(setChartEl, setAnimationTime) {
 		}
 
 		// デフォルトの棒グラフスタイル
-		Chart.defaults.global.defaultFontColor = '#292f36';
-		Chart.defaults.global.defaultFontSize = 15;
-		Chart.defaults.global.defaultFontStyle = 'bold';
+		Chart.defaults.global.defaultFontColor = '#003d25';
+		Chart.defaults.global.defaultFontSize = 14;
+		Chart.defaults.global.defaultFontFamily = '"Noto Sans JP",sans-serif';
 
 		const myChart = new Chart(chartElm, {
 			type: 'bar',
@@ -131,10 +131,11 @@ function barChart(setChartEl, setAnimationTime) {
 						// color: function(ctx) {
 						// 	return ctx.dataset.backgroundColor;
 						// },
-						color: '#292f36',
+						color: '#003d25',
 						font: {
 							size: 15,
-							family: '"Montserrat",sans-serif',
+							family: '"Lato",sans-serif',
+							weight: 'bold',
 						},
 						padding: {
 							bottom: 15,

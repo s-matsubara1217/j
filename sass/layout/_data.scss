@@ -11,27 +11,32 @@
   .data {
     &__inner {
       position: relative;
-      padding-bottom: 120px;
+      padding-top: 120px;
+      padding-bottom: 100px;
+      @include mq(tab) {
+        padding-top: 100px;
+        padding-bottom: 80px;
+      }
       @include mq(sp) {
+        padding-top: 48px;
         padding-bottom: 48px;
       }
+    }
+    &__date {
+      text-align: right;
+      margin-top: 16px;
     }
 
     .sections {
       position: relative;
       z-index: 3;
-      margin-top: 12px;
       &__wrap {
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
-        padding-top: 60px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        @include mq(sp) {
-          padding-top: 32px;
-        }
       }
       &__item {
         position: relative;
@@ -43,16 +48,16 @@
 
         &:not(:nth-child(-n + 2)) {
           @include mq(pc) {
-            margin-top: 30px;
+            margin-top: 56px;
           }
         }
         &:not(:first-child) {
           @include mq(sp) {
-            margin-top: 30px;
+            margin-top: 40px;
           }
         }
         &.-s {
-          width: 31.6%;
+          width: 31%;
           @include mq(sp) {
             width: 100%;
           }
@@ -64,7 +69,7 @@
           }
         }
         &.-m {
-          width: 48.75%;
+          width: 48%;
           @include mq(sp) {
             width: 100%;
           }
@@ -217,27 +222,37 @@
               display: flex;
               justify-content: center;
               align-items: center;
-              padding-top: 40px;
+              padding-top: 72px;
               @include mq(sp) {
                 padding-top: 20px;
               }
-              .txt {
-                line-height: 1;
-                letter-spacing: 0.1em;
-                font-size: 2.4rem;
-                font-weight: bold;
-                @include mq(sp) {
+              .illust {
+                margin-right: 12px;
+              }
+              .txtHolder {
+                .txt {
+                  line-height: 1;
                   font-size: 2rem;
+                  font-weight: bold;
+                  display: block;
+                  @include mq(sp) {
+                    font-size: 2rem;
+                  }
+                }
+              }
+              .numHolder {
+                font-size: 2.4rem;
+                min-width: 112px;
+                font-weight: bold;
+                margin-top: 8px;
+                @include mq(tab) {
+                  min-width: 100px;
                 }
                 .num {
-                  font-size: 7.2rem;
-                  font-family: $eng;
-                  font-weight: bold;
+                  font-size: 7.4rem;
+                  margin-right: 2px;
                   @include mq(tab) {
-                    font-size: 6.4rem;
-                  }
-                  @include mq(sp) {
-                    font-size: 4.8rem;
+                    font-size: 6rem;
                   }
                 }
               }
@@ -283,38 +298,6 @@
                     }
                   }
                 }
-              }
-            }
-          }
-        }
-        &.-counticon1 {
-          .icon {
-            margin-right: 24px;
-            @include mq(sp) {
-              margin-right: 16px;
-            }
-
-            .img-box {
-              width: 64px;
-              height: 101px;
-              @include mq(sp) {
-                transform: scale(0.85);
-              }
-            }
-          }
-        }
-        &.-counticon2 {
-          .icon {
-            margin-right: 32px;
-            @include mq(sp) {
-              margin-right: 16px;
-            }
-
-            .img-box {
-              width: 83px;
-              height: 79px;
-              @include mq(sp) {
-                transform: scale(0.85);
               }
             }
           }
@@ -365,7 +348,6 @@
                     border-right: 1px solid #d5d7d7;
                     padding: 12px 0;
                     font-size: 2rem;
-                    font-family: $eng;
                     font-weight: bold;
                     &:last-child {
                       border-right: none;
@@ -374,7 +356,6 @@
 
                   .num {
                     font-size: 2.8rem;
-                    font-family: $eng;
                     font-weight: bold;
                   }
                 }
@@ -386,9 +367,12 @@
           .contents {
             margin-top: 40px;
             &__visual {
-              width: 400px;
-              height: 140px;
+              width: 416px;
+              height: 240px;
               margin: 0 auto;
+              @include mq(tab) {
+                width: 390px;
+              }
               @include mq(sp) {
                 width: 300px;
                 height: 140px;
@@ -398,16 +382,19 @@
         }
         &.-line {
           .contents {
-            margin-top: 40px;
+            margin-top: 64px;
             padding: 0 40px;
             display: flex;
             flex-direction: column-reverse;
+            @include mq(tab) {
+              padding: 0 32px;
+            }
             @include mq(sp) {
               margin-top: 24px;
               padding: 0;
             }
             &__visual {
-              margin-top: 28px;
+              margin-top: 20px;
               @include mq(sp) {
                 margin-top: 24px;
               }
@@ -432,7 +419,7 @@
             }
             &__detail {
               display: flex;
-              justify-content: space-between;
+              justify-content: center;
               align-items: center;
               padding: 0 32px;
               @media screen and (min-width:768px) and (max-width:1024px) {
@@ -443,11 +430,9 @@
               }
               .data {
                 display: flex;
-                align-items: center;
-
-                &:nth-of-type(2) {
-                  flex-direction: row-reverse;
-                }
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
 
                 &__ttl {
                   line-height: 1;
@@ -461,14 +446,29 @@
                   @include mq(sp) {
                     font-size: 2rem;
                   }
-                  .num {
-                    font-size: 5.6rem;
-                    font-family: $eng;
+                  &__hd {
+                    font-size: 1.8rem;
                     @include mq(tab) {
-                      font-size: 4.8rem;
+                      font-size: 1.7rem;
+                    }
+                  }
+                  .numHolder {
+                    min-width: 96px;
+                    margin-top: 4px;
+                    @include mq(tab) {
+                      min-width: 86px;
                     }
                     @include mq(sp) {
-                      font-size: 3.6rem;
+                      min-width: 70px;
+                    }
+                    .num {
+                      font-size: 5.6rem;
+                      @include mq(tab) {
+                        font-size: 5rem;
+                      }
+                      @include mq(sp) {
+                        font-size: 4.4rem;
+                      }
                     }
                   }
                 }
@@ -478,36 +478,11 @@
                 column-rule-width: 600;
                 line-height: 1;
                 display: inline-block;
-                color: #ccc;
+                color: #003d25;
+                margin: 0 20px;
+                margin-top: 12px;
                 @include mq(sp) {
                   font-size: 3.6rem;
-                }
-              }
-              .icon {
-                flex-shrink: 0;
-                margin-top: 5px;
-
-                &.-men {
-                  margin-right: 18px;
-                  @include mq(sp) {
-                    margin-right: 18px;
-                  }
-
-                  .img-box {
-                    width: 34px;
-                    height: 41px;
-                  }
-                }
-                &.-women {
-                  margin-left: 18px;
-                  @include mq(sp) {
-                    margin-left: 18px;
-                  }
-
-                  .img-box {
-                    width: 40px;
-                    height: 40px;
-                  }
                 }
               }
             }
@@ -597,57 +572,49 @@
         }
         &.-circle {
           .contents {
+            margin: 0 auto;
             margin-top: 30px;
+            width: 198px;
+            height: 198px;
+            position: relative;
+            @include mq(tab) {
+              width: 180px;
+              height: 180px;
+            }
+
             &__visual {
-              width: 220px;
-              height: 220px;
+              width: 100%;
+              height: 100%;
               margin: 0 auto;
-              @include mq(tab) {
-                width: 190px;
-                height: 190px;
-              }
+              position: relative;
+              background-color: #00613a;
+              border-radius: 50%;
             }
             &__detail {
-              margin-top: 32px;
               display: flex;
               flex-wrap: wrap;
-              justify-content: flex-start;
-              @include mq(tab) {
-                margin-top: 28px;
+              justify-content: center;
+              align-items: center;
+              color: #fff;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%,-50%);
+              margin-top: -6px;
+
+              .txt {
+                font-size: 2rem;
+                @include mq(tab) {
+                  font-size: 1.8rem;
+                }
               }
-              &__item {
-                display: flex;
-                align-items: center;
-                &:not(:last-child) {
-                  margin-right: 10px;
-                }
-                &:nth-child(2n + 1) .icon {
-                  background: #00a572;
-                }
-                &:nth-child(2n + 2) .icon {
-                  background: #eb9446;
-                }
-                .icon {
-                  flex-shrink: 0;
-                  width: 21px;
-                  height: 21px;
-                  border-radius: 5px;
-                  margin-right: 5px;
+              .numHolder {
+                font-size: 2rem;
+                .num {
+                  font-size: 5.2rem;
+                  margin-right: 2px;
                   @include mq(tab) {
-                    width: 18px;
-                    height: 18px;
-                  }
-                }
-                .txt {
-                  font-size: 1.6rem;
-                  font-weight: bold;
-                  @include mq(tab) {
-                    font-size: 1.5rem;
-                  }
-                  .num {
-                    @include mq(tab) {
-                      font-size: 1.6rem;
-                    }
+                    font-size: 4.8rem;
                   }
                 }
               }
@@ -656,7 +623,7 @@
         }
         &.-circle2 {
           .contents {
-            margin: 12px auto 0;
+            margin: 44px auto 0;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -667,12 +634,12 @@
             }
             &__visual {
               flex-shrink: 0;
-              width: 184px;
-              height: 184px;
+              width: 226px;
+              height: 226px;
               margin-right: 5%;
               @media screen and (min-width:768px) and (max-width:1024px) {
-                width: 184px;
-                height: 184px;
+                width: 200px;
+                height: 200px;
               }
               @include mq(sp) {
                 width: 180px;
@@ -682,10 +649,10 @@
             }
             &__detail {
               width: 100%;
+              flex: 0 0 160px;
               max-width: 360px;
               display: flex;
               flex-wrap: wrap;
-              margin-top: 20px;
               position: relative;
 
               @include mq(sp) {
@@ -696,9 +663,6 @@
                 display: flex;
                 align-items: center;
                 margin: 6px 0;
-                &:not(:last-child) {
-                  margin-right: 10px;
-                }
                 &:nth-child(5n + 1) .icon {
                   background: #0f5c39;
                 }
@@ -716,17 +680,33 @@
                 }
                 .icon {
                   flex-shrink: 0;
-                  width: 16px;
-                  height: 16px;
+                  width: 18px;
+                  height: 18px;
                   margin-right: 8px;
-                  border-radius: 50%;
+                }
+                .txtHolder {
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
                 }
                 .txt {
-                  line-height: 1.4;
-                  font-size: 1.5rem;
+                  line-height: 1;
+                  font-size: 1.6rem;
+                  @include mq(tab) {
+                    font-size: 1.5rem;
+                  }
                   @include mq(sp) {
                     font-size: 1.4rem;
                   }
+                }
+                .numHolder {
+                  line-height: 1;
+                  min-width: 45px;
+                  text-align: right;
+                }
+                .num {
+                  font-size: 2.4rem;
+                  line-height: 1;
                 }
               }
             }
@@ -766,7 +746,6 @@
                 font-weight: 600;
                 .num {
                   font-size: 5rem;
-                  font-family: $eng;
                   margin-bottom: 10px;
                   @include mq(tab) {
                     font-size: 3.6rem;
@@ -792,31 +771,27 @@
         }
         &.-tag {
           .contents {
-            padding-top: 25px;
+            padding: 48px 40px 0;
             &__visual {
               position: relative;
               display: flex;
               flex-wrap: wrap;
-              // &:before {
-              //   content: "など";
-              //   margin-top: 16px;
-              //   padding-left: 5px;
-              //   font-size: 1.5rem;
-              //   font-weight: 600;
-              //   line-height: 1;
-              //   order: 1;
-              //   letter-spacing: 0.075em;
-              //   @include mq(sp) {
-              //     font-size: 1.4rem;
-              //   }
-              // }
+              margin: -7px;
               &__item {
-                margin: 8px;
+                margin: 7px;
                 padding: 10px 18px;
                 border-radius: 2px;
                 opacity: 0;
                 transition: opacity 300ms ease;
-                border: 2px solid #e0f4ed;
+                color: #fff;
+                border-radius: 4px;
+
+                &:nth-child(odd) {
+                  background-color: #00613a;
+                }
+                &:nth-child(even) {
+                  background-color: #00ae68;
+                }
 
                 @include mq(sp) {
                   margin: 3px;
@@ -832,63 +807,6 @@
                   @include mq(sp) {
                     font-size: 1.5rem;
                   }
-                  @include mq(sp) {
-                    font-size: 1.4rem;
-                  }
-                }
-              }
-            }
-          }
-        }
-        &.-tag2 {
-          .contents {
-            padding: 30px 30px 0;
-            @include mq(sp) {
-              padding: 30px 0 0;
-            }
-            &__visual {
-              position: relative;
-              display: flex;
-              justify-content: space-between;
-              flex-wrap: wrap;
-              &__item {
-                width: 24%;
-                padding: 20px;
-                box-sizing: border-box;
-                border-radius: 2px;
-                transition: opacity 300ms ease;
-                opacity: 0;
-                color: #fff;
-                text-align: center;
-                transition: opacity 300ms ease;
-                @include mq(sp) {
-                  width: 48.5%;
-                  padding: 26px 20px;
-                  &:not(:nth-child(-n + 2)) {
-                    margin-top: 8px;
-                  }
-                }
-                &:nth-child(4n + 1) {
-                  background: $primary-color;
-                }
-                &:nth-child(4n + 2) {
-                  background: #9098e0;
-                }
-                &:nth-child(4n + 3) {
-                  background: #ef7878;
-                }
-                &:nth-child(4n + 4) {
-                  background: $secondary-color;
-                }
-                &.active {
-                  opacity: 1;
-                }
-                .txt {
-                  line-height: 1;
-                  font-size: 1.5rem;
-                  font-weight: 600;
-                  letter-spacing: 0.1em;
-                  white-space: nowrap;
                   @include mq(sp) {
                     font-size: 1.4rem;
                   }
@@ -955,63 +873,6 @@
             }
           }
         }
-        &.-balloon {
-          .contents {
-            margin-top: 40px;
-            @include mq(sp) {
-              margin-top: 30px;
-            }
-
-            &__visual {
-              &__item {
-                display: flex;
-                justify-content: flex-start;
-                align-items: flex-start;
-                margin-top: 10px;
-
-                &:first-child {
-                  margin-top: 0;
-                }
-
-                .icon {
-                  flex: 0 0 39px;
-                  margin-right: 20px;
-                  margin-top: 4px;
-                }
-                .txt {
-                  flex: 1 1 auto;
-                  display: flex;
-                  justify-content: flex-start;
-                  align-items: center;
-                  background-color: #e4f2ff;
-                  font-size: 1.4rem;
-                  font-weight: bold;
-                  padding: 12px 20px;
-                  border-radius: 2px;
-                  position: relative;
-
-                  @include mq(sp) {
-                    padding: 10px 16px;
-                  }
-
-                  &:before {
-                    content: '';
-                    width: 0;
-                    height: 0;
-                    border-style: solid;
-                    border-width: 4.5px 8px 4.5px 0;
-                    border-color: transparent #e4f2ff transparent transparent;
-                    position: absolute;
-                    top: 20px;
-                    left: 0;
-                    transform: translateX(-100%);
-                  }
-                }
-              }
-            }
-
-          }
-        }
         &:before {
           content: "";
           width: 100%;
@@ -1027,11 +888,10 @@
         }
         .count {
           position: absolute;
-          top: 0;
-          left: 0;
-          transform: translate(20px,-20px);
-          width: 55px;
-          height: 55px;
+          top: -16px;
+          left: -16px;
+          width: 68px;
+          height: 68px;
           border-radius: 50%;
           display: flex;
           justify-content: center;
@@ -1040,43 +900,159 @@
           color: #fff;
           font-size: 2.4rem;
           font-weight: bold;
-          font-family: $eng;
           @media screen and (min-width:768px) and (max-width:1024px) {
-            width: 56px;
-            height: 56px;
-            font-size: 2.4rem;
+            width: 60px;
+            height: 60px;
+            font-size: 2.2rem;
           }
           @include mq(sp) {
             width: 48px;
             height: 48px;
-            font-size: 2rem;
+            font-size: 1.8rem;
+            top: -12px;
+            left: -8px;
+          }
+
+          // data
+          &::before {
+            content: '';
+            display: inline-block;
+            background-image: url(../img/data/txt-data.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 40px;
+            height: 26px;
+            position: absolute;
+            top: -14px;
+            left: -6px;
+            @include mq(sp) {
+              transform: scale(0.8);
+              transform-origin: top left;
+              top: -10px;
+            }
           }
         }
         &__wrap {
-          padding: 40px 40px 60px;
+          padding: 32px 40px 40px;
           @include mq(tab) {
-            padding: 50px 20px;
+            padding: 32px 20px 36px;
           }
           @include mq(sp) {
-            padding: 36px 20px 40px;
+            padding: 28px 20px 32px;
           }
           .num {
-            font-weight: 700;
+            font-family: 'Lato', sans-serif;
+            font-weight: 900;
+            line-height: 1;
           }
           .hd {
             text-align: center;
+            padding-bottom: 12px;
+            position: relative;
+
+            // 破線
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 100%;
+              height: 2px;
+              background-image : linear-gradient(to right, #77988b, #77988b 4px, transparent 4px, transparent 6px);
+              background-size: 6px 4px;
+              background-position: left bottom;
+              background-repeat: repeat-x;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+            }
+
             &__ttl {
-              font-size: 2.2rem;
-              font-weight: 600;
-              letter-spacing: 0.075em;
+              font-size: 2.4rem;
+              font-weight: bold;
               line-height: 1.5;
               padding: 0 4px;
               display: inline;
               @media screen and (min-width:768px) and (max-width:1024px) {
-                font-size: 2rem;
+                font-size: 2.1rem;
               }
               @include mq(sp) {
                 font-size: 1.9rem;
+              }
+
+              .thin {
+                font-size: 1.5rem;
+                font-feature-settings: 'palt';
+                @include mq(tab) {
+                  font-size: 1.4rem;
+                }
+              }
+            }
+          }
+        }
+
+        // アイテム固有
+        &.sections__item {
+          &-07 {
+            .contents {
+              &__visual {
+                .desc {
+                  line-height: 1.3;
+                  font-size: 3.2rem;
+                  font-weight: bold;
+                  @include mq(tab) {
+                    font-size: 2.6rem;
+                  }
+                }
+              }
+            }
+          }
+          &-09 {
+            .contents {
+              &__visual {
+                padding-top: 52px;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                margin: -20px;
+
+                &__item {
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: flex-start;
+                  padding: 0 32px;
+                  border-right: 2px solid #eef2f1;
+                  margin: 20px 0;
+                  @include mq(pc) {
+                    &:nth-child(3),
+                    &:nth-child(5) {
+                      border: none;
+                    }
+                  }
+                  @include mq(tab) {
+                    padding: 0 24px;
+                  }
+
+                  .illust {
+                    margin-right: 24px;
+                    @include mq(tab) {
+                      margin-right: 16px;
+                    }
+                  }
+                  .txtHolder {
+                    .txt {
+                      font-size: 1.8rem;
+                    }
+                    .numHolder {
+                      font-size: 2.4rem;
+                      .num {
+                        font-size: 6.4rem;
+                        @include mq(tab) {
+                          font-size: 5.6rem;
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -1091,10 +1067,6 @@
         margin-top: 30px;
         @include mq(sp) {
           display: block;
-        }
-
-        .-counticon2 {
-          margin-top: 30px;
         }
       }
       &-box {

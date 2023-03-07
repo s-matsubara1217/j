@@ -41,9 +41,10 @@
 	<link rel="apple-touch-icon" href="https://job-gear.jp/●/●●/●●●●●●/img/apple-touch-icon.png">
 
 	<!-- fonts -->
+	<!-- [!] このページのみ Lato 追加 -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@600;700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@600;700&family=Lato:wght@900&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
 
 	<!-- style -->
 	<!-- 共通 -->
@@ -138,8 +139,8 @@
 		<div class="pageHeader">
 			<div class="pageHeader__wrap">
 				<div class="pageHeader__ttl">
-					<span class="eng anime split -for-fadeIn">Jobs</span>
-					<h1 class="ja anime split -for-fadeIn">お仕事紹介</h1>
+					<span class="eng anime split -for-fadeIn">Data</span>
+					<h1 class="ja anime split -for-fadeIn">数字で見るJTPS</h1>
 				</div>
 				<div class="pageHeader__img"></div>
 			</div>
@@ -153,7 +154,7 @@
 						<div class="sections__wrap custom-chart-container">
 
 							<!-- 1.年齢構成 （縦棒グラフ） -->
-							<section class="sections__item -m -bar js-set_chart" data-chart="bar">
+							<section class="sections__item sections__item-01 -m -bar js-set_chart" data-chart="bar">
 								<div class="count">01</div>
 								<div class="sections__item__wrap">
 									<div class="hd"><h3 class="hd__ttl">年齢構成</h3></div>
@@ -161,7 +162,7 @@
 										<div class="contents__visual">
 											<canvas
 												class="barChart"
-												data-chart='{"10代": 4, "20代": 15, "30代": 17, "40代": 18, "50代": 18, "60代":20}'
+												data-chart='{"10代": 1, "20代": 11, "30代": 16, "40代": 24, "50代": 34, "60代":14}'
 												data-bg="[#00613a,#00ae68,#007a49,#408000,#65ba11,#9bd429]"
 											></canvas>
 										</div>
@@ -169,126 +170,158 @@
 								</div>
 							</section>
 							<!-- 2.男女構成 （横棒グラフ） -->
-							<section class="sections__item -m -line js-set_chart" data-chart="line">
+							<section class="sections__item sections__item-02 -m -line js-set_chart" data-chart="line">
 								<div class="count">02</div>
 								<div class="sections__item__wrap">
 									<div class="hd"><h3 class="hd__ttl">男女構成</h3></div>
 									<div class="contents">
 										<div class="contents__visual">
 											<div class="lineChart">
-												<div class="lineChart__item js-set_line -bg-color01" data-num="34"></div>
-												<div class="lineChart__item js-set_line -bg-color02" data-num="66"></div>
+												<div class="lineChart__item js-set_line -bg-color01" data-num="78"></div>
+												<div class="lineChart__item js-set_line -bg-color02" data-num="22"></div>
 											</div>
 										</div>
 										<div class="contents__detail">
 											<div class="data">
-												<p class="data__body">
-													<span class="js-set_count num" data-num="34">0</span>％
-												</p>
+												<div class="data__body">
+													<h4 class="data__body__hd">男性</h4>
+													<div class="numHolder">
+														<span class="js-set_count num" data-num="78">0</span>％
+													</div>
+												</div>
 											</div>
 											<span class="separate">:</span>
 											<div class="data">
-												<p class="data__body">
-													<span class="js-set_count num" data-num="66">0</span>％
-												</p>
+												<div class="data__body">
+													<h4 class="data__body__hd">女性</h4>
+													<div class="numHolder">
+														<span class="js-set_count num" data-num="22">0</span>％
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</section>
 							<!-- 3.社員数 （横棒グラフ） -->
-							<section class="sections__item -m -line js-set_chart" data-chart="line">
+							<section class="sections__item sections__item-03 -m -line js-set_chart" data-chart="line">
 								<div class="count">03</div>
 								<div class="sections__item__wrap">
 									<div class="hd"><h3 class="hd__ttl">社員数</h3></div>
 									<div class="contents">
 										<div class="contents__visual">
 											<div class="lineChart">
-												<div class="lineChart__item js-set_line -bg-color01" data-num="34"></div>
-												<div class="lineChart__item js-set_line -bg-color02" data-num="66"></div>
+												<div class="lineChart__item js-set_line -bg-color01" data-num="60"></div>
+												<div class="lineChart__item js-set_line -bg-color02" data-num="40"></div>
 											</div>
 										</div>
 										<div class="contents__detail">
 											<div class="data">
-												<p class="data__body">
-													<span class="js-set_count num" data-num="34">0</span>％
-												</p>
+												<div class="data__body">
+													<h4 class="data__body__hd">正社員</h4>
+													<div class="numHolder">
+														<span class="js-set_count num" data-num="60">0</span>％
+													</div>
+												</div>
 											</div>
 											<span class="separate">:</span>
 											<div class="data">
-												<p class="data__body">
-													<span class="js-set_count num" data-num="66">0</span>％
-												</p>
+												<div class="data__body">
+													<h4 class="data__body__hd">契約社員</h4>
+													<div class="numHolder">
+														<span class="js-set_count num" data-num="40">0</span>％
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</section>
 							<!-- 4.職種構成 （パイグラフ） -->
-							<section class="sections__item -m js-set_chart -circle2" data-chart="circle">
+							<section class="sections__item sections__item-04 -m js-set_chart -circle2" data-chart="circle">
 								<div class="count">04</div>
 								<div class="sections__item__wrap">
-									<div class="hd"><h3 class="hd__ttl">職種構成</h3></div>
+									<div class="hd"><h3 class="hd__ttl">職種構成<span class="thin">（製品担当、原料加工担当、分析業務等）</span></h3></div>
 									<div class="contents">
 										<div class="contents__visual">
 											<canvas class="circleChart"
 												data-maxWidth='200'
 												data-maxHeight='200'
-												data-chart='{"構内業務": 54, "保全業務": 29, "分析業務": 13, "清掃業務": 4, "管理担当": 4}'
+												data-chart='{"構内業務": 76, "保全業務": 9, "分析業務": 9, "清掃業務": 3, "管理担当": 3}'
 												data-bg='[#0f5c39,#299d62,#3d7937,#5fa933,#90bc3c]'></canvas>
 										</div>
 										<div class="contents__detail">
 											<div class="contents__detail__item">
 												<div class="icon"></div>
-												<p class="txt">
-													構内業務：<span class="js-set_count num" data-num="54">0</span>%
-												</p>
+												<div class="txtHolder">
+													<p class="txt">構内業務：</p>
+													<div class="numHolder">
+														<span class="js-set_count num" data-num="76">0</span>%
+													</div>
+												</div>
 											</div>
 											<div class="contents__detail__item">
 												<div class="icon"></div>
-												<p class="txt">
-													保全業務：<span class="js-set_count num" data-num="29">0</span>%
-												</p>
+												<div class="txtHolder">
+													<p class="txt">保全業務：</p>
+													<div class="numHolder">
+														<span class="js-set_count num" data-num="9">0</span>%
+													</div>
+												</div>
 											</div>
 											<div class="contents__detail__item">
 												<div class="icon"></div>
-												<p class="txt">
-													分析業務：<span class="js-set_count num" data-num="13">0</span>%
-												</p>
+												<div class="txtHolder">
+													<p class="txt">分析業務：</p>
+													<div class="numHolder">
+														<span class="js-set_count num" data-num="9">0</span>%
+													</div>
+												</div>
 											</div>
 											<div class="contents__detail__item">
 												<div class="icon"></div>
-												<p class="txt">
-													清掃業務：<span class="js-set_count num" data-num="4">0</span>%
-												</p>
+												<div class="txtHolder">
+													<p class="txt">清掃業務：</p>
+													<div class="numHolder">
+														<span class="js-set_count num" data-num="3">0</span>%
+													</div>
+												</div>
 											</div>
 											<div class="contents__detail__item">
 												<div class="icon"></div>
-												<p class="txt">
-													管理担当：<span class="js-set_count num" data-num="4">0</span>%
-												</p>
+												<div class="txtHolder">
+													<p class="txt">管理担当：</p>
+													<div class="numHolder">
+														<span class="js-set_count num" data-num="3">0</span>%
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</section>
 							<!-- 5.平均年齢 （カウントアップのみ） -->
-							<section class="sections__item -m js-set_chart -count -counticon1" data-chart="count">
+							<section class="sections__item sections__item-05 -s js-set_chart -count" data-chart="count">
 								<div class="count">05</div>
 								<div class="sections__item__wrap">
 									<div class="hd"><h3 class="hd__ttl">平均年齢</h3></div>
 									<div class="contents">
 										<div class="contents__visual">
-											<p class="txt">
-												<span class="js-set_count num" data-num="10">0</span>年
-												<span class="js-set_count num" data-num="7">0</span>ヶ月
-											</p>
+											<div class="illust">
+												<img src="img/data/illust_human.png" alt="イラスト" height="87">
+											</div>
+											<div class="txtHolder">
+												<span class="txt">平均</span>
+												<div class="numHolder">
+													<span class="js-set_count num" data-num="46">0</span>歳
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</section>
 							<!-- 6.経験・未経験の割合 （パイグラフ） -->
-							<section class="sections__item -m js-set_chart -circle" data-chart="circle">
+							<section class="sections__item sections__item-06 -s js-set_chart -circle" data-chart="circle">
 								<div class="count">06</div>
 								<div class="sections__item__wrap">
 									<div class="hd"><h3 class="hd__ttl">経験・未経験の割合</h3></div>
@@ -301,27 +334,31 @@
 												data-bg='[#00ae68,#00613a]'></canvas>
 										</div>
 										<div class="contents__detail">
-											未経験100%
+											<span class="txt">未経験</span>
+											<div class="numHolder">
+												<span class="js-set_count num" data-num="100">0</span>%
+											</div>
 										</div>
 									</div>
 								</div>
 							</section>
 							<!-- 7.平均残業時間 -->
-							<section class="sections__item -m js-set_chart -count -counticon2" data-chart="count">
+							<section class="sections__item sections__item-07 -s js-set_chart -count" data-chart="count">
 								<div class="count">07</div>
 								<div class="sections__item__wrap">
 									<div class="hd"><h3 class="hd__ttl">平均残業時間</h3></div>
 									<div class="contents">
 										<div class="contents__visual">
-											<p class="txt">
-												ほとんどありません！
-											</p>
+											<div class="illust">
+												<img src="img/data/illust_clock.png" alt="イラスト" height="78">
+											</div>
+											<p class="desc">ほとんど<br>ありません！</p>
 										</div>
 									</div>
 								</div>
 							</section>
 							<!-- 8.保有資格 （タグ） -->
-							<section class="sections__item -l js-set_chart -tag" data-chart="tag">
+							<section class="sections__item sections__item-08 -l js-set_chart -tag" data-chart="tag">
 								<div class="count">08</div>
 								<div class="sections__item__wrap">
 									<div class="hd"><h3 class="hd__ttl">保有資格</h3></div>
@@ -344,16 +381,67 @@
 								</div>
 							</section>
 							<!-- 9.通勤交通手段 （カウントアップのみ） -->
-							<section class="sections__item -m js-set_chart -count -counticon1" data-chart="count">
+							<section class="sections__item sections__item-09 -l js-set_chart -count" data-chart="count">
 								<div class="count">09</div>
 								<div class="sections__item__wrap">
-									<div class="hd"><h3 class="hd__ttl">通勤交通手段</h3></div>
+									<div class="hd"><h3 class="hd__ttl">通勤交通手段<span class="thin">（車・バイク・自転車・電車・徒歩）</span></h3></div>
 									<div class="contents">
 										<div class="contents__visual">
-											<p class="txt">
-												<span class="js-set_count num" data-num="10">0</span>年
-												<span class="js-set_count num" data-num="7">0</span>ヶ月
-											</p>
+											<div class="contents__visual__item">
+												<div class="illust">
+													<img src="img/data/illust_car.png" alt="イラスト" loading="lazy" height="80">
+												</div>
+												<div class="txtHolder">
+													<span class="txt">車</span>
+													<div class="numHolder">
+														<span class="js-set_count num" data-num="59">0</span>%
+													</div>
+												</div>
+											</div>
+											<div class="contents__visual__item">
+												<div class="illust">
+													<img src="img/data/illust_bike.png" alt="イラスト" loading="lazy" height="79">
+												</div>
+												<div class="txtHolder">
+													<span class="txt">バイク</span>
+													<div class="numHolder">
+														<span class="js-set_count num" data-num="20">0</span>%
+													</div>
+												</div>
+											</div>
+											<div class="contents__visual__item">
+												<div class="illust">
+													<img src="img/data/illust_bycicle.png" alt="イラスト" loading="lazy" height="80">
+												</div>
+												<div class="txtHolder">
+													<span class="txt">自転車</span>
+													<div class="numHolder">
+														<span class="js-set_count num" data-num="14">0</span>%
+													</div>
+												</div>
+											</div>
+											<div class="contents__visual__item">
+												<div class="illust">
+													<img src="img/data/illust_train.png" alt="イラスト" loading="lazy" height="80">
+												</div>
+												<div class="txtHolder">
+													<span class="txt">公共交通機関</span>
+													<div class="numHolder">
+														<span class="js-set_count num" data-num="4">0</span>%
+													</div>
+												</div>
+											</div>
+											<div class="contents__visual__item">
+												<div class="illust">
+													<img src="img/data/illust_walk.png" alt="イラスト" loading="lazy" height="77">
+												</div>
+												<div class="txtHolder">
+													<span class="txt">徒歩</span>
+													<div class="numHolder">
+														<span class="js-set_count num" data-num="3">0</span>%
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -361,6 +449,7 @@
 
 						</div>
 					</div>
+					<p class="data__date">2023年2月現在</p>
 				</div>
 			</div>
 		</main>
@@ -372,7 +461,7 @@
 					<li class="breadcrumb__list__item">
 						<a href="index.htm"><span>トップページ</span></a>
 					</li>
-					<li class="breadcrumb__list__item">お仕事紹介</li>
+					<li class="breadcrumb__list__item">数字で見るJTPS</li>
 				</ol>
 			</div>
 		</div>
