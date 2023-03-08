@@ -1066,6 +1066,9 @@
               @include mq(tab) {
                 padding-bottom: 50px;
               }
+              @include mq(sp) {
+                padding-bottom: 32px;
+              }
             }
           }
           &-05 {
