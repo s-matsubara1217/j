@@ -60,6 +60,10 @@ function observable() {
 						circleChart(entry.target, setAnimationTime);
 						countChart(entry.target, setAnimationTime, 400);
 						break;
+					case 'circle02':
+						circleChart02(entry.target, setAnimationTime);
+						countChart(entry.target, setAnimationTime, 400);
+						break;
 					case 'doughnut':
 						doughnutChart(entry.target, setAnimationTime);
 						countChart(entry.target, setAnimationTime, 400);
@@ -224,15 +228,94 @@ function circleChart(setChartEl, setAnimationTime) {
 					datalabels: {
 						color: 'transparent',
 						font: {
-							weight: 'bold',
-							size: 15,
+							// weight: 'bold',
+							size: 14,
 						},
 						formatter: function(value, ctx) {
-							if(value < 10){
+							if(value < 8){
 								return '';
 							}
 							return value + '%';
 						},
+						offset: 0,
+						// align: 'top',
+						// align: 'end',
+						// anchor: 'top',
+						// anchor: 'center',
+					},
+					tooltip: {
+						enabled: false,
+					},
+					legend: {
+						display: false,
+					},
+				},
+        legend: {
+        	display: false
+				},
+				tooltips: {
+					enabled: false
+				},
+			}
+		});
+	});
+}
+
+// class="circleChart02"を取得し、data-chartに登録された比率でグラフの表示
+function circleChart02(setChartEl, setAnimationTime) {
+	const circleChartNodeList02 = setChartEl.querySelectorAll(".circleChart02");
+	Array.prototype.forEach.call(circleChartNodeList02, function (chartElm) {
+
+		const w = chartElm.dataset.maxWidth;
+		const h = chartElm.dataset.maxHeight;
+		chartElm.width = w;
+		chartElm.height = h;
+
+		const defaultBarColor = '#d9d9d9';
+		const datas = JSON.parse(chartElm.dataset.chart);
+		const bg = chartElm.dataset.bg;
+		let keyArr = [];
+		let valueArr = [];
+		let bgArr = [];
+
+		if (bg) {
+			bgArr = bg.slice(1).slice(0, -1).split(",");
+		}
+		for (let key in datas) {
+			keyArr.push(key);
+			valueArr.push(datas[key]);
+		}
+
+		const myChart = new Chart(chartElm, {
+			type: "pie",
+			data: {
+				labels: keyArr,
+				datasets: [{
+					data: valueArr,
+					backgroundColor: bgArr ? bgArr : defaultBarColor,
+					borderWidth: 0,
+				}],
+			},
+			plugins: [ChartDataLabels],
+			options: {
+				plugins: {
+					datalabels: {
+						color: '#fff',
+						font: {
+							// weight: 'bold',
+							size: 14,
+						},
+						formatter: function(value, ctx) {
+							if(value < 8){
+								return '';
+							}
+							return value + '%';
+						},
+						offset: 0,
+						// align: 'top',
+						// align: 'end',
+						// anchor: 'top',
+						// anchor: 'center',
 					},
 					tooltip: {
 						enabled: false,
