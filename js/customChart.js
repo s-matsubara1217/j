@@ -306,7 +306,7 @@ function circleChart02(setChartEl, setAnimationTime) {
 							size: 14,
 						},
 						formatter: function(value, ctx) {
-							if(value < 8){
+							if(value < 9){
 								return '';
 							}
 							return value + '%';
